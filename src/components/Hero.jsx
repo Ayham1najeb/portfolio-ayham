@@ -1,0 +1,283 @@
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { FaGithub, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'; 
+// 🛑 استخدام Typed.js
+import Typed from 'typed.js'; 
+
+// Styled Components
+const HeroContainer = styled.div`
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex; 
+    /* 🛑 التعديل: الصورة على اليمين والنصوص على اليسار */
+    flex-direction: row; /* الصورة يمين، والنص يسار */
+    align-items: center;
+    justify-content: space-between;
+    gap: 30rem; /* تباعد أفقي كبير */
+
+    @media (max-width: 768px) {
+        /* عكس الترتيب على الهاتف: النص أولاً، ثم الصورة */
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 2rem;
+    }
+`;
+
+const TextContent = styled(motion.div)`
+    flex: 1;
+    /* 🛑 التعديل: محاذاة النص لليسار */
+    text-align: left; 
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+`;
+
+const AccentText = styled(motion.p)`
+    font-size: 1.25rem;
+    color: var(--color-accent);     
+    margin-bottom: 0.5rem;
+`;
+
+const MainTitleStatic = styled(motion.h1)`
+    font-size: 1.6rem; 
+    font-weight: 800;
+    color: var(--color-text); 
+    text-shadow: 
+        0 0 5px var(--color-accent),
+        0 0 10px rgba(132, 127, 216, 0.4); 
+        
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+        font-size: 1.3rem;
+    }
+`;
+
+const SubTitleStatic = styled(motion.p)`
+    font-size: 1.1rem;
+    color: var(--color-text);
+    opacity: 0.7;
+    margin-bottom: 1.8rem;
+`;
+
+const ButtonGroup = styled(motion.div)`
+    display: flex;
+    gap: 1rem;
+    /* 🛑 التعديل: محاذاة الأزرار لليسار */
+    justify-content: flex-start; 
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+`;
+
+const PrimaryButton = styled(motion.a)`
+    background-color: var(--color-accent);
+    color: var(--color-background); 
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: #3730A3;
+    }
+`;
+
+const SecondaryButton = styled(motion.a)`
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-background); 
+    }
+`;
+
+const Socials = styled(motion.div)`
+    display: flex;
+    gap: 1rem; 
+    margin-top: 2rem;
+    /* 🛑 التعديل: محاذاة أيقونات التواصل لليسار */
+    justify-content: flex-start; 
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+`;
+
+const IconWrapper = styled(motion.span)`
+    background-color: rgba(79, 70, 229, 0.1); 
+    border-radius: 50%;
+    width: 2.5rem; 
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+`;
+
+const IconLink = styled.a`
+    color: var(--color-accent); 
+    font-size: 1.375rem;
+    display: flex;
+`;
+
+const ImageContainer = styled(motion.div)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 300px; 
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.4); 
+    position: relative; 
+
+    @media (max-width: 768px) {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+`;
+
+// الصورة داخل الدائرة
+const ProfileImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
+
+// Framer Motion Variants
+const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
+const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 0.8 } },
+};
+
+
+const Hero = () => {
+    const elRef = useRef(null);
+
+    useEffect(() => {
+        const typedOptions = {
+            strings: ["AYHAM NAJIB", "Software Engineering","Cyber Security", "Full Stack Developer"],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            loop: true,
+        };
+        const typed = new Typed(elRef.current, typedOptions);
+
+        return () => {
+            typed.destroy();
+        };
+    }, []); 
+
+    return (
+        <HeroContainer>
+            
+            {/* 1. النصوص والأزرار (على اليسار) */}
+            <TextContent
+                initial="hidden"
+                animate="visible"
+                variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+            >
+                <AccentText variants={textVariants}>
+                    Hi, I'm
+                </AccentText>
+                
+                {/* النص المتحرك (الاسم والتخصص) */}
+                <motion.div variants={textVariants}>
+                    <MainTitleStatic as="h1">
+                        <span ref={elRef} />
+                    </MainTitleStatic>
+                </motion.div>
+                
+                {/* النص الثابت (SubTitle) */}
+                <SubTitleStatic variants={textVariants}>
+                   Crafting Modern, Scalable Solutions with React & laravel.
+                </SubTitleStatic>
+                
+                {/* أزرار الإجراءات */}
+                <ButtonGroup variants={textVariants}>
+                    <PrimaryButton 
+                        href="#projects" 
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        View Projects
+                    </PrimaryButton>
+                    <SecondaryButton 
+                        href="#contact" 
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        Contact Me
+                    </SecondaryButton>
+                </ButtonGroup>
+
+                {/* أيقونات التواصل الاجتماعي الدائرية */}
+                <Socials variants={textVariants}>
+                    <IconLink 
+                        href="https://github.com/yourusername" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        as={motion.a}
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <IconWrapper>
+                            <FaGithub />
+                        </IconWrapper>
+                    </IconLink>
+                    
+                    <IconLink 
+                        href="https://linkedin.com/in/yourusername" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        as={motion.a}
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <IconWrapper>
+                            <FaLinkedinIn />
+                        </IconWrapper>
+                    </IconLink>
+                    
+                    <IconLink 
+                        href="https://facebook.com/yourusername" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        as={motion.a}
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <IconWrapper>
+                            <FaFacebookF />
+                        </IconWrapper>
+                    </IconLink>
+                </Socials>
+            </TextContent>
+            
+            {/* 2. الصورة (على اليمين) */}
+            <ImageContainer
+                variants={imageVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                {/* 🛑 السطر الذي يجب تعديله يدوياً لوضع صورتك الجديدة */}
+                <ProfileImage src="/ayham-profile1.jpeg" alt="Profile Picture" />
+            </ImageContainer>
+
+        </HeroContainer>
+    );
+};
+
+export default Hero;
