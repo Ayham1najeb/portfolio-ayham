@@ -36,6 +36,11 @@ const Title = styled(motion.h2)`
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block;
     padding-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
 `;
 
 const SkillsGrid = styled(motion.div)`
@@ -45,6 +50,11 @@ const SkillsGrid = styled(motion.div)`
     gap: 3rem;
     max-width: 1100px; 
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+        gap: 1.5rem;
+    }
 `;
 
 const SkillCard = styled(motion.div)`
@@ -63,6 +73,11 @@ const SkillCard = styled(motion.div)`
     &:hover {
         background-color: var(--color-border);
         box-shadow: 0 5px 20px rgba(79, 70, 229, 0.3); 
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        min-height: 110px;
     }
 `;
 
@@ -84,6 +99,15 @@ const skillItemVariants = {
         } 
     },
 };
+
+const IconWrapper = styled.div`
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+    
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
+`;
 
 const Skills = () => {
     return (
@@ -110,7 +134,9 @@ const Skills = () => {
                             variants={skillItemVariants}
                             whileHover={{ scale: 1.1, y: -5 }} 
                         >
-                            <Icon style={{ fontSize: '3.5rem', marginBottom: '0.75rem', color: skill.color }} />
+                            <IconWrapper style={{ color: skill.color }}>
+                                <Icon />
+                            </IconWrapper>
                             <SkillName>{skill.name}</SkillName>
                         </SkillCard>
                     );

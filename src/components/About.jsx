@@ -21,6 +21,11 @@ const Title = styled(motion.h2)`
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block;
     padding-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
 `;
 
 const Paragraph = styled(motion.p)`
@@ -32,6 +37,12 @@ const Paragraph = styled(motion.p)`
     line-height: 1.8;
     /* 💡 ضمان توسيط الفقرات */
     text-align: center; 
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
 `;
 
 const CVButton = styled(motion.a)`
@@ -46,6 +57,11 @@ const CVButton = styled(motion.a)`
     
     &:hover {
         background-color: #3730A3;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 `;
 
@@ -63,6 +79,11 @@ const SecondaryCVButton = styled(motion.a)`
         background-color: var(--color-accent);
         color: var(--color-background);
     }
+
+    @media (max-width: 768px) {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
 `;
 
 const ButtonGroup = styled.div`
@@ -71,6 +92,10 @@ const ButtonGroup = styled.div`
     gap: 1rem; 
     justify-content: center;
     margin-top: 1.5rem;
+    
+    @media (max-width: 768px) {
+        gap: 0.5rem;
+    }
 `;
 
 

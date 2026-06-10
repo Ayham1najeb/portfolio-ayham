@@ -56,6 +56,10 @@ const Title = styled(motion.h2)`
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block;
     padding-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
 `;
 
 const Subtitle = styled.p`
@@ -63,6 +67,11 @@ const Subtitle = styled.p`
     opacity: 0.7;
     font-size: 1.4rem;
     margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
 `;
 
 const ProjectsGrid = styled.div`
@@ -71,6 +80,11 @@ const ProjectsGrid = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
     gap: 3rem; /* زيادة التباعد بين الكروت */
     text-align: left; /* LTR للمحتوى الداخلي */
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
 `;
 
 const ProjectCard = styled(motion.div)`

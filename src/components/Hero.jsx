@@ -62,6 +62,11 @@ const SubTitleStatic = styled(motion.p)`
     color: var(--color-text);
     opacity: 0.7;
     margin-bottom: 1.8rem;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
 `;
 
 const ButtonGroup = styled(motion.div)`
@@ -143,7 +148,9 @@ const ImageContainer = styled(motion.div)`
     position: relative; 
 
     @media (max-width: 768px) {
-        flex: 1;
+        flex: 0 0 220px;
+        width: 220px;
+        height: 220px;
         margin-bottom: 2rem;
     }
 `;
