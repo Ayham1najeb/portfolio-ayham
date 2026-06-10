@@ -716,6 +716,23 @@ Error generating stack: `+l.message+`
     &:hover {
         box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     }
+
+    @media (max-width: 768px) {
+        padding: 1.2rem;
+        gap: 1rem;
+
+        & > svg {
+            font-size: 1.5rem;
+        }
+
+        & > div > p:first-child {
+            font-size: 0.95rem !important;
+        }
+
+        & > div > p:last-child {
+            font-size: 0.85rem !important;
+        }
+    }
 `,zT=P.div`
     display: flex;
     gap: 1.5rem; 
@@ -765,6 +782,11 @@ Error generating stack: `+l.message+`
         outline: none;
         border-color: var(--color-accent);
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 `,RT=P.textarea`
     width: 100%;
     padding: 1.2rem;
@@ -779,6 +801,11 @@ Error generating stack: `+l.message+`
         outline: none;
         border-color: var(--color-accent);
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 `,jT=P.button`
     width: 100%;
     background-color: var(--color-accent); 
@@ -792,6 +819,11 @@ Error generating stack: `+l.message+`
     transition: background-color 0.3s;
     &:hover {
         background-color: #3730A3;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1.1rem;
     }
 `,_T=P.p`
     margin-top: 1.5rem; 
@@ -824,4 +856,4 @@ Error generating stack: `+l.message+`
     margin-top: 0.5rem;
     /* 💡 تصفير أي هامش قد ينتج عن العنصر <Text> */
     margin: 0;
-`,LT=()=>O.jsx(BT,{children:O.jsxs(NT,{children:[O.jsx(yy,{style:{fontSize:"1.3rem"},children:"© 2025 Ayham Najib. All rights reserved."}),O.jsx(yy,{})]})});function UT(){return O.jsx(Kx,{children:O.jsxs("div",{className:"min-h-screen",children:[O.jsx(p8,{}),O.jsxs("main",{style:{paddingTop:"5rem"},children:[O.jsx("section",{id:"home",style:{minHeight:"90vh",display:"flex",alignItems:"center"},children:O.jsx(G8,{})}),O.jsx("section",{id:"about",style:{padding:"5rem 0"},children:O.jsx(J8,{})}),O.jsx("section",{id:"skills",style:{padding:"5rem 0",backgroundColor:"var(--color-card-bg)"},children:O.jsx(iT,{})}),O.jsx("section",{id:"projects",style:{padding:"5rem 0"},children:O.jsx(gT,{})}),O.jsx("section",{id:"contact",style:{padding:"5rem 0"},children:O.jsx(VT,{})})]}),O.jsx(LT,{})]})})}r4.createRoot(document.getElementById("root")).render(O.jsx(k.StrictMode,{children:O.jsx(UT,{})}));
+`,LT=()=>O.jsx(BT,{children:O.jsxs(NT,{children:[O.jsx(yy,{style:{fontSize:"1.1rem"},children:"© 2025 أيهم نجيب. جميع الحقوق محفوظة."}),O.jsx(yy,{})]})});function UT(){return O.jsx(Kx,{children:O.jsxs("div",{className:"min-h-screen",children:[O.jsx(p8,{}),O.jsxs("main",{style:{paddingTop:"5rem"},children:[O.jsx("section",{id:"home",style:{minHeight:"90vh",display:"flex",alignItems:"center"},children:O.jsx(G8,{})}),O.jsx("section",{id:"about",style:{padding:"5rem 0"},children:O.jsx(J8,{})}),O.jsx("section",{id:"skills",style:{padding:"5rem 0",backgroundColor:"var(--color-card-bg)"},children:O.jsx(iT,{})}),O.jsx("section",{id:"projects",style:{padding:"5rem 0"},children:O.jsx(gT,{})}),O.jsx("section",{id:"contact",style:{padding:"5rem 0"},children:O.jsx(VT,{})})]}),O.jsx(LT,{})]})})}r4.createRoot(document.getElementById("root")).render(O.jsx(k.StrictMode,{children:O.jsx(UT,{})}));
