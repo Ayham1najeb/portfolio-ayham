@@ -103,6 +103,23 @@ const InfoCard = styled(motion.div)`
     &:hover {
         box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     }
+
+    @media (max-width: 768px) {
+        padding: 1.2rem;
+        gap: 1rem;
+
+        & > svg {
+            font-size: 1.5rem;
+        }
+
+        & > div > p:first-child {
+            font-size: 0.95rem !important;
+        }
+
+        & > div > p:last-child {
+            font-size: 0.85rem !important;
+        }
+    }
 `;
 
 const SocialsContainer = styled.div`
@@ -162,6 +179,11 @@ const Input = styled.input`
         outline: none;
         border-color: var(--color-accent);
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 `;
 
 const TextArea = styled.textarea`
@@ -178,6 +200,11 @@ const TextArea = styled.textarea`
         outline: none;
         border-color: var(--color-accent);
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 `;
 
 const SubmitButton = styled.button`
@@ -193,6 +220,11 @@ const SubmitButton = styled.button`
     transition: background-color 0.3s;
     &:hover {
         background-color: #3730A3;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1.1rem;
     }
 `;
 

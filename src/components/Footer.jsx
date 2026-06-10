@@ -39,8 +39,8 @@ const Footer = () => {
     <FooterContainer>
       <ContentWrapper>
         {/* 💡 النص الرئيسي بخط أكبر كما طلبته */}
-        <Text style={{ fontSize:'1.3rem' }}>
-          © 2025 Ayham Najib. All rights reserved.
+        <Text style={{ fontSize:'1.1rem' }}>
+          © 2025 أيهم نجيب. جميع الحقوق محفوظة.
         </Text>
         
         {/* 💡 إعادة استخدام Text لعرض معلومات البناء (لتبدو أنيقة) */}
