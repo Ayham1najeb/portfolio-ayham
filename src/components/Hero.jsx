@@ -22,6 +22,9 @@ const HeroContainer = styled.div`
         flex-direction: column-reverse; 
         text-align: center;
         gap: 2rem;
+        /* جلب المحتوى إلى اليمين قليلاً بزيادة البادنج من اليسار */
+        padding-left: 3rem;
+        padding-right: 1rem;
     }
 `;
 
@@ -236,7 +239,7 @@ const Hero = () => {
                 {/* أيقونات التواصل الاجتماعي الدائرية */}
                 <Socials variants={textVariants}>
                     <IconLink 
-                        href="https://github.com/yourusername" 
+                        href="https://github.com/Ayham1najeb" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         as={motion.a}
@@ -248,7 +251,7 @@ const Hero = () => {
                     </IconLink>
                     
                     <IconLink 
-                        href="https://linkedin.com/in/yourusername" 
+                        href="https://www.linkedin.com/in/ayham-najeb-6a362b345" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         as={motion.a}
@@ -260,7 +263,7 @@ const Hero = () => {
                     </IconLink>
                     
                     <IconLink 
-                        href="https://facebook.com/yourusername" 
+                        href="https://www.facebook.com/share/1H8h1SdFGJ/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         as={motion.a}
