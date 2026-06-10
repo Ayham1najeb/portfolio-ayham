@@ -6,32 +6,32 @@ import { FaExternalLinkAlt, FaCode, FaGithub } from 'react-icons/fa';
 // 🛑 بيانات المشاريع (تضمين مسارات صور وهمية - ضع صورك في مجلد public)
 const projectsData = [
     { 
-        title: "Estate Website", 
-        description: "Explore homes that fit your dreams. Built with React and modern CSS.", 
+        title: "موقع عقارات", 
+        description: "استكشف المنازل التي تناسب أحلامك. مبني باستخدام React وتنسيقات عصرية.", 
         image: "/project-estate.jpg", 
         tags: ["React", "Styled-Comp", "Framer Motion"], 
         link: "#", 
         code: "#" 
     },
     { 
-        title: "Dashboard App", 
-        description: "A comprehensive dashboard for business analytics and data visualization.", 
+        title: "لوحة تحكم", 
+        description: "لوحة تحكم شاملة لتحليلات الأعمال وعرض البيانات بشكل مرئي.", 
         image: "/project-dashboard.jpg", 
         tags: ["Next.js", "Redux", "API"], 
         link: "#", 
         code: "#" 
     },
     { 
-        title: "E-commerce Platform", 
-        description: "Full-stack e-commerce solution with dynamic cart and checkout.", 
+        title: "متجر إلكتروني", 
+        description: "منصة تجارة إلكترونية متكاملة مع سلة تسوق ديناميكية وعملية دفع.", 
         image: "/project-ecommerce.jpg", 
         tags: ["React", "Node.js", "MongoDB"], 
         link: "#", 
         code: "#" 
     },
     { 
-        title: "NFT Landing Page", 
-        description: "A stunning and animated landing page for digital collectible showcase.", 
+        title: "صفحة هبوط NFT", 
+        description: "صفحة هبوط جذابة ومتحركة لعرض المقتنيات الرقمية.", 
         image: "/project-nft.jpg", 
         tags: ["Gatsby", "Figma", "Design"], 
         link: "#", 
@@ -79,11 +79,12 @@ const ProjectsGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
     gap: 3rem; /* زيادة التباعد بين الكروت */
-    text-align: left; /* LTR للمحتوى الداخلي */
+    text-align: right; /* RTL للمحتوى الداخلي */
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem;
+        padding: 0 1.5rem; /* لجعل الكروت أصغر وعدم تمددها لنهاية الشاشة */
     }
 `;
 
@@ -120,6 +121,10 @@ const ProjectImage = styled.div`
     ${ProjectCard}:hover & > img { 
         transform: scale(1.08); 
     }
+
+    @media (max-width: 768px) {
+        height: 160px; /* جعل الصورة أصغر بكثير على الهاتف */
+    }
 `;
 
 const CardContent = styled.div`
@@ -128,6 +133,10 @@ const CardContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
 `;
 
 const ProjectTitle = styled.h3`
@@ -135,6 +144,10 @@ const ProjectTitle = styled.h3`
     font-weight: bold;
     color: var(--color-text); 
     margin-bottom: 0.8rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 `;
 
 const ProjectDescription = styled.p`
@@ -142,6 +155,10 @@ const ProjectDescription = styled.p`
     opacity: 0.7;
     font-size: 1.1rem;
     margin-bottom: 1.2rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.95rem;
+    }
 `;
 
 const TagGroup = styled.div`
@@ -160,6 +177,11 @@ const Tag = styled.span`
     background-color: rgba(79, 70, 229, 0.15); 
     color: var(--color-accent);
     border-radius: 4px;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
 `;
 
 const LinkGroup = styled.div`
@@ -180,6 +202,10 @@ const LinkButton = styled(motion.a)`
 
     &:hover {
         text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.95rem;
     }
 `;
 
@@ -205,10 +231,10 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
             >
-                My Works
+                أعمالي
             </Title>
             <Subtitle>
-                A collection of my recent and best projects showcasing different skills.
+                مجموعة من أحدث وأفضل مشاريعي التي تبرز مهاراتي المختلفة.
             </Subtitle>
 
             <ProjectsGrid>
@@ -242,11 +268,11 @@ const Projects = () => {
                             {/* 3. أزرار الروابط */}
                             <LinkGroup>
                                 <LinkButton href={project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaExternalLinkAlt /> <span>Live Demo</span> 
+                                    <FaExternalLinkAlt /> <span>معاينة</span> 
                                 </LinkButton>
                                 
                                 <LinkButton href={project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaGithub /> <span>GitHub</span>
+                                    <FaGithub /> <span>الكود</span>
                                 </LinkButton>
                             </LinkGroup>
                         </CardContent>

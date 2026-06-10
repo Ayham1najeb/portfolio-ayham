@@ -6,11 +6,11 @@ import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 
 // الروابط بترتيب LTR
 const navLinks = [
-  { title: "Home", href: "#home" },
-  { title: "About", href: "#about" },
-  { title: "Skills", href: "#skills" },
-  { title: "Projects", href: "#projects" },
-  { title: "Contact", href: "#contact" },
+  { title: "الرئيسية", href: "#home" },
+  { title: "من أنا", href: "#about" },
+  { title: "مهاراتي", href: "#skills" },
+  { title: "أعمالي", href: "#projects" },
+  { title: "تواصل معي", href: "#contact" },
 ];
 
 // Styled Components

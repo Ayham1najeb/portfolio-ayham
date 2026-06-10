@@ -182,7 +182,7 @@ const Hero = () => {
 
     useEffect(() => {
         const typedOptions = {
-            strings: ["AYHAM NAJIB", "Software Engineering","Cyber Security", "Full Stack Developer"],
+            strings: ["أيهم نجيب", "مهندس برمجيات", "مطور واجهات", "مطور شامل"],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 1500,
@@ -205,7 +205,7 @@ const Hero = () => {
                 variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
             >
                 <AccentText variants={textVariants}>
-                    Hi, I'm
+                    أهلاً بك، أنا
                 </AccentText>
                 
                 {/* النص المتحرك (الاسم والتخصص) */}
@@ -217,7 +217,7 @@ const Hero = () => {
                 
                 {/* النص الثابت (SubTitle) */}
                 <SubTitleStatic variants={textVariants}>
-                   Crafting Modern, Scalable Solutions with React & laravel.
+                   أبني حلولاً برمجية عصرية وقابلة للتوسع باستخدام React و Laravel.
                 </SubTitleStatic>
                 
                 {/* أزرار الإجراءات */}
@@ -226,13 +226,13 @@ const Hero = () => {
                         href="#projects" 
                         whileHover={{ scale: 1.05 }}
                     >
-                        View Projects
+                        شاهد أعمالي
                     </PrimaryButton>
                     <SecondaryButton 
                         href="#contact" 
                         whileHover={{ scale: 1.05 }}
                     >
-                        Contact Me
+                        تواصل معي
                     </SecondaryButton>
                 </ButtonGroup>
 

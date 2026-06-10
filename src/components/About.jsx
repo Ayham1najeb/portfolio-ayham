@@ -126,16 +126,16 @@ const About = () => {
             viewport={{ once: true, amount: 0.2 }}
         >
             <Title variants={itemVariants}>
-                About Me
+                من أنا
             </Title>
 
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                 <Paragraph variants={itemVariants}>
-                    Hello! I'm **Ayham**, a passionate Full Stack Developer focused on turning complex ideas into sleek, efficient, and user-friendly interfaces. I have [X] years of experience building **scalable** and **high-performance** web applications.
+                    أهلاً بك! أنا **أيهم نجيب**، مهندس برمجيات (خريج تركيا 2022 - 2026) ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية.
                 </Paragraph>
 
                 <Paragraph variants={itemVariants}>
-                    I specialize in the **React JS** ecosystem, using modern tools like **Styled-Components** for ultimate styling control and **Framer Motion** to integrate those attractive animations that bring applications to life. My goal is to deliver clean code and exceptional user experience.
+                    أختص بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل **React JS** و **Laravel**، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة مثل **Framer Motion** لإضافة تفاعلات حركية تضفي الحياة على التطبيقات. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة.
                 </Paragraph>
                 
                 {/* 🛑 مجموعة الأزرار الجديدة */}
@@ -147,7 +147,7 @@ const About = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                         >
-                            View CV
+                            عرض السيرة الذاتية
                         </SecondaryCVButton>
 
                         <CVButton
@@ -155,7 +155,7 @@ const About = () => {
                             download
                             whileHover={{ scale: 1.05 }}
                         >
-                            Download CV
+                            تحميل السيرة الذاتية
                         </CVButton>
                     </ButtonGroup>
                 </motion.div>

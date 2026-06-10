@@ -43,6 +43,10 @@ const Title = styled(motion.h2)`
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block; 
     padding-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
 `;
 
 const Subtitle = styled.p`
@@ -50,12 +54,17 @@ const Subtitle = styled.p`
     opacity: 0.7;   
     font-size: 1.4rem;
     margin-bottom: 4.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
 `;
 
 const ContentGrid = styled.div`
     display: flex;
     gap: 3.5rem; 
-    text-align: left; 
+    text-align: right; 
     
     @media (max-width: 900px) {
         flex-direction: column;
@@ -74,10 +83,7 @@ const InfoSidebar = styled(motion.div)`
     }
 `;
 
-// تم إزالة IconCircle المحلية واستبدالها بـ IconWrapper المنسوخ
-
 const InfoCard = styled(motion.div)`
-    /* الخلفية والحدود تتغير مع الثيم */
     background-color: var(--color-card-bg);
     padding: 2rem; 
     border-radius: 0.7rem;
@@ -86,14 +92,12 @@ const InfoCard = styled(motion.div)`
     border: 1px solid var(--color-border);
     display: flex;
     align-items: center;
+    gap: 1.2rem; /* استبدال الـ margin ليكون متوافق مع RTL */
     transition: box-shadow 0.3s;
     
-    /* الستايل لأيقونات الإيميل والهاتف */
     & > svg { 
         color: var(--color-accent);
         font-size: 2rem; 
-        margin-right: 1.2rem; /* فصل الأيقونة عن النص */
-        margin-left: 0; 
     }
 
     &:hover {
@@ -103,10 +107,9 @@ const InfoCard = styled(motion.div)`
 
 const SocialsContainer = styled.div`
     display: flex;
-    /* 🛑 تعديل ليتوافق مع المسافات بين البطاقات */
     gap: 1.5rem; 
     margin-top: 1.5rem;
-    padding: 0 2rem; /* مسافة أفقية للابتعاد عن حافة InfoSidebar */
+    padding: 0 2rem; 
 
     @media (max-width: 900px) {
         justify-content: center;
@@ -125,6 +128,7 @@ const FormArea = styled(motion.form)`
     @media (max-width: 900px) {
         order: 1; 
         margin-bottom: 2rem;
+        padding: 1.5rem;
     }
 `;
 
@@ -133,6 +137,11 @@ const NameEmailGroup = styled.div`
     gap: 1.8rem; 
     flex-direction: row; 
     margin-bottom: 1.8rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
 `;
 
 const FormGroup = styled.div`
@@ -207,7 +216,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus("Sending...");
+        setStatus("جاري الإرسال...");
         setIsSuccess(false);
 
         // 🛑 IDs المستخدمة في الكود (مفترض أنها صحيحة الآن)
@@ -217,11 +226,11 @@ const Contact = () => {
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
             .then(() => {
-                setStatus("Message sent successfully! I'll get back to you soon.");
+                setStatus("تم إرسال رسالتك بنجاح! سأرد عليك في أقرب وقت.");
                 setIsSuccess(true);
                 setFormData({ name: '', email: '', message: '' });
             }, () => {
-                setStatus("An error occurred. Please try again later.");
+                setStatus("حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.");
                 setIsSuccess(false);
             });
     };
@@ -232,16 +241,16 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
         >
-            <Title>Contact Me</Title>
+            <Title>تواصل معي</Title>
             <Subtitle>
-                Feel free to reach out anytime—I'd love to hear from you!
+                لا تتردد في التواصل معي في أي وقت، يسعدني جداً الاستماع إليك!
             </Subtitle>
 
               <ContentGrid>
                 
                 {/* === Info Sidebar (Contact Details) === */}
                 <InfoSidebar 
-                    initial={{ x: -50, opacity: 0 }} 
+                    initial={{ x: 50, opacity: 0 }} 
                     whileInView={{ x: 0, opacity: 1 }} 
                     transition={{ duration: 0.6 }} 
                     viewport={{ once: true }}
@@ -249,25 +258,25 @@ const Contact = () => {
                     {/* Email Card */}
                     <InfoCard>
                         <FaEnvelope /> 
-                        <div style={{ marginLeft: '1.5rem', marginRight: '0' }}> 
-                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>Email</p>
-                            <p style={{ color: '#6B7280', fontSize: '1rem' }}>ayhamoy2@gmail.com</p>
+                        <div> 
+                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>البريد الإلكتروني</p>
+                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'right' }}>ayhamoy2@gmail.com</p>
                         </div>
                     </InfoCard>
 
                     {/* Phone Card */}
                     <InfoCard>
                         <FaPhoneAlt /> 
-                        <div style={{ marginLeft: '1.5rem', marginRight: '0' }}> 
-                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>Phone</p>
-                            <p style={{ color: '#6B7280', fontSize: '1rem' }}>05519547382</p>
+                        <div> 
+                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>رقم الهاتف</p>
+                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'right' }}>05519547382</p>
                         </div>
                     </InfoCard>
                     
-                    {/* 🛑 Social Links - الآن تستخدم IconWrapper و IconLink المطابقتين لـ Hero */}
+                    {/* 🛑 Social Links */}
                     <SocialsContainer>
                         <IconLink 
-                            href="https://www.linkedin.com/in/ayham-najeb-6a362b345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                            href="https://www.linkedin.com/in/ayham-najeb-6a362b345" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             as={motion.a}
@@ -279,7 +288,7 @@ const Contact = () => {
                         </IconLink>
                         
                         <IconLink 
-                            href="https://github.com/yourusername" 
+                            href="https://github.com/Ayham1najeb" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             as={motion.a}
@@ -291,7 +300,7 @@ const Contact = () => {
                         </IconLink>
                         
                         <IconLink 
-                            href="https://www.facebook.com/share/17LeobJXNR/" 
+                            href="https://www.facebook.com/share/1H8h1SdFGJ/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             as={motion.a}
@@ -307,7 +316,7 @@ const Contact = () => {
 
                 {/* === Form Submission Area === */}
                 <FormArea onSubmit={handleSubmit} 
-                    initial={{ x: 50, opacity: 0 }}
+                    initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
@@ -315,19 +324,19 @@ const Contact = () => {
                     
                     <NameEmailGroup>
                         <FormGroup>
-                            <Input type="text" id="name" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
+                            <Input type="text" id="name" name="name" placeholder="اسمك" value={formData.name} onChange={handleChange} required />
                         </FormGroup>
                         <FormGroup>
-                            <Input type="email" id="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+                            <Input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" value={formData.email} onChange={handleChange} required />
                         </FormGroup>
                     </NameEmailGroup>
                     
                     <FormGroup>
-                        <TextArea id="message" name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required rows="6"></TextArea> 
+                        <TextArea id="message" name="message" placeholder="رسالتك..." value={formData.message} onChange={handleChange} required rows="6"></TextArea> 
                     </FormGroup>
                     
                     <SubmitButton type="submit">
-                        Send Message
+                        إرسال الرسالة
                     </SubmitButton>
 
                     {/* Submission Status */}
