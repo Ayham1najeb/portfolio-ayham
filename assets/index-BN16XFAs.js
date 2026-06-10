@@ -369,13 +369,11 @@ Error generating stack: `+l.message+`
     }
 `,fy=P(ot.p)`
     font-size: 1.35rem;
-    /* 💡 لون النص يتغير مع الثيم */
     color: var(--color-text);
     opacity: 0.85; 
     margin-bottom: 1.8rem;
     line-height: 1.8;
-    /* 💡 ضمان توسيط الفقرات */
-    text-align: center; 
+    text-align: justify; /* محاذاة النص ليكون متساوياً من اليمين واليسار */
 
     @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -383,7 +381,6 @@ Error generating stack: `+l.message+`
         margin-bottom: 1.2rem;
     }
 `,Z8=P(ot.a)`
-    /* 🛑 الزر الأساسي (Primary) للتحميل */
     background-color: var(--color-accent);
     color: var(--color-background); 
     font-weight: bold;
@@ -401,7 +398,6 @@ Error generating stack: `+l.message+`
         font-size: 0.9rem;
     }
 `,Q8=P(ot.a)`
-    /* 🛑 الزر الثانوي (Secondary) للعرض */
     background-color: var(--color-accent);
     color: var(--color-background); 
     font-weight: bold;
@@ -420,7 +416,6 @@ Error generating stack: `+l.message+`
         font-size: 0.9rem;
     }
 `,K8=P.div`
-    /* 🛑 حاوية الأزرار الجديدة */
     display: flex;
     gap: 1rem; 
     justify-content: center;
@@ -429,7 +424,7 @@ Error generating stack: `+l.message+`
     @media (max-width: 768px) {
         gap: 0.5rem;
     }
-`,k8={hidden:{opacity:0,y:50},visible:{opacity:1,y:0,transition:{duration:.6,staggerChildren:.2}}},Or={hidden:{opacity:0,x:0},visible:{opacity:1,x:0,transition:{duration:.5}}},J8=()=>O.jsxs(Y8,{variants:k8,initial:"hidden",whileInView:"visible",viewport:{once:!0,amount:.2},children:[O.jsx(X8,{variants:Or,children:"من أنا"}),O.jsxs("div",{style:{maxWidth:"800px",margin:"0 auto"},children:[O.jsx(fy,{variants:Or,children:"أهلاً بك! أنا **أيهم نجيب**، مهندس برمجيات (خريج تركيا 2022 - 2026) ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية."}),O.jsx(fy,{variants:Or,children:"أختص بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل **React JS** و **Laravel**، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة مثل **Framer Motion** لإضافة تفاعلات حركية تضفي الحياة على التطبيقات. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة."}),O.jsx(ot.div,{variants:Or,children:O.jsxs(K8,{children:[O.jsx(Q8,{href:"/ayham-cv.pdf",target:"_blank",rel:"noopener noreferrer",whileHover:{scale:1.05},children:"عرض السيرة الذاتية"}),O.jsx(Z8,{href:"/ayham-cv.pdf",download:!0,whileHover:{scale:1.05},children:"تحميل السيرة الذاتية"})]})})]})]}),P8=[{name:"React JS",icon:oy,color:"#61DAFB"},{name:"HTML5",icon:v8,color:"#E34F26"},{name:"CSS3 / Bootstrap",icon:y8,color:"#2965F1"},{name:"JavaScript (ES6+)",icon:S8,color:"#F7DF1E"},{name:"Framer Motion",icon:oy,color:"#4F46E5"},{name:"Python",icon:T8,color:"#3776AB"},{name:"Java",icon:b8,color:"#007396"},{name:"C/C#",icon:uy,color:"#5D2469"},{name:"Laravel / PHP",icon:x8,color:"#FF2D20"},{name:"MySQL / SQL",icon:uy,color:"#00758F"},{name:"Git & GitHub",icon:g8,color:"#F05032"}],F8=P(ot.div)`
+`,k8={hidden:{opacity:0,y:50},visible:{opacity:1,y:0,transition:{duration:.6,staggerChildren:.2}}},Or={hidden:{opacity:0,x:0},visible:{opacity:1,x:0,transition:{duration:.5}}},J8=()=>O.jsxs(Y8,{variants:k8,initial:"hidden",whileInView:"visible",viewport:{once:!0,amount:.2},children:[O.jsx(X8,{variants:Or,children:"من أنا"}),O.jsxs("div",{style:{maxWidth:"800px",margin:"0 auto"},children:[O.jsx(fy,{variants:Or,children:"أهلاً بك! أنا أيهم نجيب، مهندس برمجيات تخرجت من تركيا ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية المعقدة إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. طوال مسيرتي، عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية وجعلتني قادراً على إيجاد حلول مبتكرة."}),O.jsx(fy,{variants:Or,children:"أعمل بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل React JS و Laravel، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة خالية من التعقيد. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة تتحدث عن نفسها، مع الالتزام بأفضل الممارسات البرمجية."}),O.jsx(ot.div,{variants:Or,children:O.jsxs(K8,{children:[O.jsx(Q8,{href:"/ayham-cv.pdf",target:"_blank",rel:"noopener noreferrer",whileHover:{scale:1.05},children:"عرض السيرة الذاتية"}),O.jsx(Z8,{href:"/ayham-cv.pdf",download:!0,whileHover:{scale:1.05},children:"تحميل السيرة الذاتية"})]})})]})]}),P8=[{name:"React JS",icon:oy,color:"#61DAFB"},{name:"HTML5",icon:v8,color:"#E34F26"},{name:"CSS3 / Bootstrap",icon:y8,color:"#2965F1"},{name:"JavaScript (ES6+)",icon:S8,color:"#F7DF1E"},{name:"Framer Motion",icon:oy,color:"#4F46E5"},{name:"Python",icon:T8,color:"#3776AB"},{name:"Java",icon:b8,color:"#007396"},{name:"C/C#",icon:uy,color:"#5D2469"},{name:"Laravel / PHP",icon:x8,color:"#FF2D20"},{name:"MySQL / SQL",icon:uy,color:"#00758F"},{name:"Git & GitHub",icon:g8,color:"#F05032"}],F8=P(ot.div)`
     max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 2rem; 
