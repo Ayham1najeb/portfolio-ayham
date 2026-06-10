@@ -7,12 +7,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 // 💡 استيراد مُزوّد الثيم
 import { ThemeProvider } from './context/ThemeContext'; 
+import GlowingBackground from './components/GlowingBackground'; // الخلفية المتوهجة
 
 
 function App() {
   return (
     // 💡 تغليف التطبيق بالـ ThemeProvider
     <ThemeProvider> 
+      <GlowingBackground /> {/* 💡 ستظهر فقط في الوضع الليلي */}
       <div className="min-h-screen">
         <Navbar /> 
         
@@ -26,8 +28,8 @@ function App() {
               <About />
           </section>
           
-          {/* خلفية أغمق قليلاً. سنستخدم متغير CSS لتبديلها */}
-          <section id="skills" style={{ padding: '5rem 0', backgroundColor: 'var(--color-card-bg)' }}> 
+          {/* تم إزالة الخلفية هنا لكي تظهر الأضواء من خلف قسم المهارات */}
+          <section id="skills" style={{ padding: '5rem 0' }}> 
               <Skills />
           </section>
 
