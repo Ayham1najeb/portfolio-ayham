@@ -30,13 +30,11 @@ const Title = styled(motion.h2)`
 
 const Paragraph = styled(motion.p)`
     font-size: 1.35rem;
-    /* 💡 لون النص يتغير مع الثيم */
     color: var(--color-text);
     opacity: 0.85; 
     margin-bottom: 1.8rem;
     line-height: 1.8;
-    /* 💡 ضمان توسيط الفقرات */
-    text-align: center; 
+    text-align: justify; /* محاذاة النص ليكون متساوياً من اليمين واليسار */
 
     @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -46,7 +44,6 @@ const Paragraph = styled(motion.p)`
 `;
 
 const CVButton = styled(motion.a)`
-    /* 🛑 الزر الأساسي (Primary) للتحميل */
     background-color: var(--color-accent);
     color: var(--color-background); 
     font-weight: bold;
@@ -66,7 +63,6 @@ const CVButton = styled(motion.a)`
 `;
 
 const SecondaryCVButton = styled(motion.a)`
-    /* 🛑 الزر الثانوي (Secondary) للعرض */
     background-color: var(--color-accent);
     color: var(--color-background); 
     font-weight: bold;
@@ -87,7 +83,6 @@ const SecondaryCVButton = styled(motion.a)`
 `;
 
 const ButtonGroup = styled.div`
-    /* 🛑 حاوية الأزرار الجديدة */
     display: flex;
     gap: 1rem; 
     justify-content: center;
@@ -131,11 +126,11 @@ const About = () => {
 
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                 <Paragraph variants={itemVariants}>
-                    أهلاً بك! أنا **أيهم نجيب**، مهندس برمجيات (خريج تركيا 2022 - 2026) ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية.
+                    أهلاً بك! أنا أيهم نجيب، مهندس برمجيات تخرجت من تركيا ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية المعقدة إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. طوال مسيرتي، عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية وجعلتني قادراً على إيجاد حلول مبتكرة.
                 </Paragraph>
 
                 <Paragraph variants={itemVariants}>
-                    أختص بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل **React JS** و **Laravel**، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة مثل **Framer Motion** لإضافة تفاعلات حركية تضفي الحياة على التطبيقات. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة.
+                    أعمل بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل React JS و Laravel، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة خالية من التعقيد. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة تتحدث عن نفسها، مع الالتزام بأفضل الممارسات البرمجية.
                 </Paragraph>
                 
                 {/* 🛑 مجموعة الأزرار الجديدة */}
