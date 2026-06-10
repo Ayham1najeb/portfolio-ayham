@@ -65,6 +65,7 @@ Error generating stack: `+l.message+`
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid var(--color-border);
+    direction: ltr; /* استعادة اتجاه القائمة كما كان */
 `,i8=P.div`
     max-width: 1200px;
     margin: 0 auto;
@@ -232,9 +233,6 @@ Error generating stack: `+l.message+`
         flex-direction: column-reverse; 
         text-align: center;
         gap: 2rem;
-        /* جلب المحتوى إلى اليمين قليلاً بزيادة البادنج من اليسار */
-        padding-left: 3rem;
-        padding-right: 1rem;
     }
 `,w8=P(ot.div)`
     flex: 1;
