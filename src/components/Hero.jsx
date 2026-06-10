@@ -22,9 +22,6 @@ const HeroContainer = styled.div`
         flex-direction: column-reverse; 
         text-align: center;
         gap: 2rem;
-        /* جلب المحتوى إلى اليمين قليلاً بزيادة البادنج من اليسار */
-        padding-left: 3rem;
-        padding-right: 1rem;
     }
 `;
 

@@ -24,6 +24,7 @@ const NavContainer = styled(motion.nav)`
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid var(--color-border);
+    direction: ltr; /* استعادة اتجاه القائمة كما كان */
 `;
 
 const NavContent = styled.div`
