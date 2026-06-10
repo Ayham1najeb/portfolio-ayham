@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 // 🛑 التعديل: استيراد الأيقونات الجديدة
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaJava, FaPython, FaGitAlt, FaLaravel, FaDatabase } from 'react-icons/fa'; 
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaJava, FaPython, FaGitAlt, FaLaravel, FaDatabase, FaLinux, FaPuzzlePiece, FaServer, FaDocker, FaCubes, FaSpaceShuttle, FaWind, FaRobot } from 'react-icons/fa'; 
 
 // 🛑 البيانات (تحديث المهارات)
 const skillsData = [
@@ -18,6 +18,16 @@ const skillsData = [
     { name: "Laravel / PHP", icon: FaLaravel, color: "#FF2D20" },
     { name: "MySQL / SQL", icon: FaDatabase, color: "#00758F" },
     { name: "Git & GitHub", icon: FaGitAlt, color: "#F05032" }, 
+    
+    // المهارات الجديدة
+    { name: "Linux", icon: FaLinux, color: "#FCC624" },
+    { name: "Problem Solving", icon: FaPuzzlePiece, color: "#FF5722" },
+    { name: "RESTful APIs", icon: FaServer, color: "#009688" },
+    { name: "Docker", icon: FaDocker, color: "#2496ED" },
+    { name: "OOP & SOLID", icon: FaCubes, color: "#9C27B0" },
+    { name: "Postman", icon: FaSpaceShuttle, color: "#FF6C37" },
+    { name: "Tailwind CSS", icon: FaWind, color: "#38B2AC" },
+    { name: "Robotics", icon: FaRobot, color: "#7952B3" },
 ];
 
 // Styled Components
