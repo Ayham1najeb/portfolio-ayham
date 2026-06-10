@@ -35,9 +35,8 @@ body.dark-theme {
   --color-background: #101828;
   --color-text: #F9FAFB; 
   --color-accent: #4F46E5; 
-  /* 🛑 الشفافية لخلفية الكروت ليظهر التوهج من خلفها */
-  --color-card-bg: rgba(30, 41, 59, 0.65); 
-  --color-border: rgba(51, 65, 85, 0.5); 
+  --color-card-bg: #1E293B; 
+  --color-border: #334155; 
 
   background-color: var(--color-background);
   color: var(--color-text);
