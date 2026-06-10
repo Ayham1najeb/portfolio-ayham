@@ -8,7 +8,7 @@
 body {
   font-family: 'Arial', sans-serif;
   scroll-behavior: smooth;
-  transition: background-color 0.5s, color 0.5s;
+  /* 🛑 إزالة تأخير التنقل بين الوضع الفاتح والليلي ليصبح فورياً */
 }
 
 html, body {
@@ -21,7 +21,6 @@ html, body {
 body.light-theme {
   --color-background: #F9FAFB;
   --color-text: #101828; 
-  /* 🛑 اللون الجديد: الأزرق الملكي */
   --color-accent: #4F46E5; 
   --color-card-bg: #FFFFFF; 
   --color-border: #EAECF0; 
@@ -30,13 +29,14 @@ body.light-theme {
   color: var(--color-text);
 }
 
-/* === 2. الثيم الداكن (عند الضغط: #101828) === */
+/* === 2. الثيم الداكن (عند الضغط: #1F2937) === */
 body.dark-theme {
-  --color-background: #101828;
-  --color-text: #F9FAFB; 
-  --color-accent: #4F46E5; 
-  --color-card-bg: #1E293B; 
-  --color-border: #334155; 
+  /* 🛑 ألوان أهدأ ومريحة للعين بناء على طلبك */
+  --color-background: #111827; /* Gray 900 بدلاً من الأزرق الداكن القوي */
+  --color-text: #E5E7EB; /* Gray 200 بدلاً من الأبيض الناصع */
+  --color-accent: #6366F1; /* Indigo 500 أهدأ قليلاً */
+  --color-card-bg: #1F2937; /* Gray 800 */
+  --color-border: #374151; /* Gray 700 */
 
   background-color: var(--color-background);
   color: var(--color-text);

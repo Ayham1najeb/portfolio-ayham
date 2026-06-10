@@ -77,7 +77,7 @@ const SkillCard = styled(motion.div)`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--color-border); 
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     min-height: 140px; /* لضمان تساوي الأبعاد الرأسية */
 
     &:hover {
