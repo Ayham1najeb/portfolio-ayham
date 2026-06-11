@@ -42,6 +42,8 @@ export const translations = {
         project_myshop_desc: "متجر إلكتروني متكامل مع سلة تسوق ديناميكية، فلترة المنتجات، ونظام دفع آمن مع لوحة تحكم شاملة لإدارة المنتجات والطلبات.",
         project_smartfile_title: "SmartFileHub — منصة إدارة المستندات",
         project_smartfile_desc: "منصة سحابية ذكية وآمنة لإدارة المستندات والملفات، توفر أدوات متقدمة لتحويل وتنظيم الملفات بسرعة فائقة مع حماية عالية للبيانات.",
+        project_pharmacy_title: "Pharmacy — نظام إدارة الصيدلية",
+        project_pharmacy_desc: "نظام متكامل لإدارة الصيدليات يشمل تتبع المخزون، إدارة الأدوية والوصفات الطبية، وتقارير المبيعات بواجهة سهلة الاستخدام.",
 
         // Contact
         contact_title: "تواصل معي",
@@ -99,6 +101,8 @@ export const translations = {
         project_myshop_desc: "A full-featured online store with a dynamic shopping cart, product filtering, secure checkout, and a complete admin panel for managing products and orders.",
         project_smartfile_title: "SmartFileHub — Document Platform",
         project_smartfile_desc: "A smart and secure cloud platform for document management, offering advanced tools for converting and organizing files with blazing speed and top-tier data protection.",
+        project_pharmacy_title: "Pharmacy — Pharmacy Management",
+        project_pharmacy_desc: "A comprehensive pharmacy management system featuring inventory tracking, medication and prescription management, and sales reporting with an intuitive user interface.",
 
         // Contact
         contact_title: "Contact Me",

@@ -220,6 +220,13 @@ const Projects = () => {
             tags: ["React", "Vite", "MUI", "Cloudflare"], 
             link: "https://smartfilehub.com/", 
             code: "#" 
+        },
+        { 
+            title: t('project_pharmacy_title'), 
+            description: t('project_pharmacy_desc'), 
+            tags: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/pharmacy" 
         }
     ];
 
