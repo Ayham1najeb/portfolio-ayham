@@ -160,6 +160,13 @@ const ProfileImage = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* 🛑 تحسين ألوان الصورة برمجياً لتبدو احترافية */
+    filter: contrast(1.1) saturate(1.15) brightness(1.05);
+    transition: filter 0.3s;
+    
+    &:hover {
+        filter: contrast(1.2) saturate(1.25) brightness(1.1);
+    }
 `;
 
 // Framer Motion Variants
@@ -280,7 +287,7 @@ const Hero = () => {
                 animate="visible"
             >
                 {/* 🛑 السطر الذي يجب تعديله يدوياً لوضع صورتك الجديدة */}
-                <ProfileImage src="/ayham-profile1.jpeg" alt="Profile Picture" />
+                <ProfileImage src="/portfolio-ayham/ayham-profile1.jpeg" alt="Profile Picture" />
             </ImageContainer>
 
         </HeroContainer>
