@@ -194,27 +194,31 @@ const Projects = () => {
 
     const projectsData = [
         { 
-            title: t('project_ecommerce_title'), 
-            description: t('project_ecommerce_desc'), 
-            image: "/project-ecommerce.jpg", 
+            title: t('project_isbul_title'), 
+            description: t('project_isbul_desc'), 
+            tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/IsBul-Job-Platform" 
+        },
+        { 
+            title: t('project_velora_title'), 
+            description: t('project_velora_desc'), 
+            tags: ["React", "Styled Components", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/velora-clinic-frontend" 
+        },
+        { 
+            title: t('project_myshop_title'), 
+            description: t('project_myshop_desc'), 
             tags: ["React", "Node.js", "MongoDB"], 
             link: "#", 
-            code: "#" 
+            code: "https://github.com/Ayham1najeb/my-shop" 
         },
         { 
-            title: t('project_dashboard_title'), 
-            description: t('project_dashboard_desc'), 
-            image: "/project-dashboard.jpg", 
-            tags: ["React", "Tailwind", "API"], 
-            link: "#", 
-            code: "#" 
-        },
-        { 
-            title: t('project_social_title'), 
-            description: t('project_social_desc'), 
-            image: "/project-social.jpg", 
-            tags: ["Laravel", "MySQL", "Bootstrap"], 
-            link: "#", 
+            title: t('project_smartfile_title'), 
+            description: t('project_smartfile_desc'), 
+            tags: ["React", "Vite", "MUI", "Cloudflare"], 
+            link: "https://smartfilehub.com/", 
             code: "#" 
         }
     ];
@@ -241,10 +245,6 @@ const Projects = () => {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ delay: index * 0.1 }}
                     >
-                        {/* 1. صورة المشروع */}
-                        <ProjectImage>
-                            <img src={project.image} alt={project.title} />
-                        </ProjectImage>
 
                         <CardContent>
                             <div>

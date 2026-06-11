@@ -33,13 +33,15 @@ export const translations = {
         projects_title: "أبرز مشاريعي",
         project_view: "عرض المشروع",
         project_code: "الكود المصدري",
-        // Project Placeholders
-        project_ecommerce_title: "منصة تجارة إلكترونية متكاملة",
-        project_ecommerce_desc: "متجر إلكتروني حديث يوفر تجربة تسوق سلسة مع سلة مشتريات ذكية، نظام دفع آمن، ولوحة تحكم شاملة للإدارة.",
-        project_dashboard_title: "لوحة تحكم إدارية",
-        project_dashboard_desc: "نظام إدارة محتوى قوي مخصص للشركات لتحليل البيانات وعرض الإحصائيات في الوقت الفعلي بواجهة مستخدم تفاعلية.",
-        project_social_title: "تطبيق تواصل اجتماعي مصغر",
-        project_social_desc: "منصة تتيح للمستخدمين مشاركة المنشورات، التفاعل معها، وبناء مجتمعات صغيرة باهتمامات مشتركة بأداء عالي.",
+        // Real Projects
+        project_isbul_title: "İşBul — منصة البحث عن وظائف",
+        project_isbul_desc: "منصة توظيف متكاملة تربط بين أصحاب العمل والباحثين عن فرص عمل في تركيا، مع نظام تصفية ذكي وإدارة كاملة للإعلانات الوظيفية والسير الذاتية.",
+        project_velora_title: "Velora Clinic — نظام إدارة العيادة",
+        project_velora_desc: "واجهة أمامية احترافية لنظام إدارة عيادة طبية، تتضمن حجز المواعيد، إدارة ملفات المرضى، ولوحة تحكم شاملة للأطباء والإداريين.",
+        project_myshop_title: "My Shop — متجر إلكتروني",
+        project_myshop_desc: "متجر إلكتروني متكامل مع سلة تسوق ديناميكية، فلترة المنتجات، ونظام دفع آمن مع لوحة تحكم شاملة لإدارة المنتجات والطلبات.",
+        project_smartfile_title: "SmartFileHub — منصة إدارة المستندات",
+        project_smartfile_desc: "منصة سحابية ذكية وآمنة لإدارة المستندات والملفات، توفر أدوات متقدمة لتحويل وتنظيم الملفات بسرعة فائقة مع حماية عالية للبيانات.",
 
         // Contact
         contact_title: "تواصل معي",
@@ -88,13 +90,15 @@ export const translations = {
         projects_title: "My Projects",
         project_view: "Live Demo",
         project_code: "Source Code",
-        // Project Placeholders
-        project_ecommerce_title: "E-Commerce Platform",
-        project_ecommerce_desc: "A modern e-commerce store providing a seamless shopping experience with a smart cart, secure payment system, and an admin dashboard.",
-        project_dashboard_title: "Admin Dashboard",
-        project_dashboard_desc: "A powerful CMS for businesses to analyze data and display real-time statistics with an interactive user interface.",
-        project_social_title: "Mini Social Network",
-        project_social_desc: "A platform allowing users to share posts, interact, and build small communities with shared interests at high performance.",
+        // Real Projects
+        project_isbul_title: "İşBul — Job Search Platform",
+        project_isbul_desc: "A comprehensive recruitment platform connecting employers and job seekers in Turkey, featuring smart filtering, job listing management, and resume handling.",
+        project_velora_title: "Velora Clinic — Clinic Management",
+        project_velora_desc: "A professional frontend for a medical clinic management system, including appointment booking, patient records, and a comprehensive dashboard for doctors and admins.",
+        project_myshop_title: "My Shop — E-Commerce Store",
+        project_myshop_desc: "A full-featured online store with a dynamic shopping cart, product filtering, secure checkout, and a complete admin panel for managing products and orders.",
+        project_smartfile_title: "SmartFileHub — Document Platform",
+        project_smartfile_desc: "A smart and secure cloud platform for document management, offering advanced tools for converting and organizing files with blazing speed and top-tier data protection.",
 
         // Contact
         contact_title: "Contact Me",
