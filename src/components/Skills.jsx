@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useLanguage } from '../context/LanguageContext'; 
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaJava, FaPython, FaGitAlt, FaLaravel, FaDatabase, FaLinux, FaPuzzlePiece, FaServer, FaDocker, FaCubes, FaSpaceShuttle, FaWind, FaRobot } from 'react-icons/fa'; 
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaJava, FaPython, FaGitAlt, FaLaravel, FaDatabase, FaLinux, FaPuzzlePiece, FaServer, FaDocker, FaCubes, FaSpaceShuttle, FaWind, FaRobot, FaSitemap, FaCodeBranch } from 'react-icons/fa'; 
 
 // 🛑 البيانات (تحديث المهارات)
 const skillsData = [
@@ -28,6 +28,8 @@ const skillsData = [
     { name: "Postman", icon: FaSpaceShuttle, color: "#FF6C37" },
     { name: "Tailwind CSS", icon: FaWind, color: "#38B2AC" },
     { name: "Robotics", icon: FaRobot, color: "#7952B3" },
+    { name: "System Design", icon: FaSitemap, color: "#1565C0" },
+    { name: "CI/CD Pipelines", icon: FaCodeBranch, color: "#43A047" },
 ];
 
 // Styled Components
