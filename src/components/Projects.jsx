@@ -268,11 +268,11 @@ const Projects = () => {
 
                             {/* 3. أزرار الروابط */}
                             <LinkGroup>
-                                <LinkButton href={project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
+                                <LinkButton href={project.link !== "#" ? project.link : project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
                                     <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
                                 </LinkButton>
                                 
-                                <LinkButton href={project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
+                                <LinkButton href={project.code !== "#" ? project.code : project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
                                     <FaGithub /> <span>{t('project_code')}</span>
                                 </LinkButton>
                             </LinkGroup>
