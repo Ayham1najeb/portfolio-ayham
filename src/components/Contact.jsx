@@ -110,112 +110,140 @@ const InfoCard = styled(motion.div)`
 
         & > svg {
             font-size: 1.5rem;
-        }
-
-        & > div > p:first-child {
-            font-size: 0.95rem !important;
-        }
-
-        & > div > p:last-child {
-            font-size: 0.85rem !important;
-        }
+        margin-bottom: 2rem;
     }
 `;
 
-const SocialsContainer = styled.div`
+const ContactContent = styled.div`
     display: flex;
-    gap: 1.5rem; 
-    margin-top: 1.5rem;
-    padding: 0 2rem; 
+    flex-direction: row; 
+    gap: 4rem;
 
-    @media (max-width: 900px) {
-        justify-content: center;
-        padding: 0;
+    @media (max-width: 992px) {
+        flex-direction: column;
+        gap: 2rem;
     }
 `;
 
-const FormArea = styled(motion.form)`
-    flex: 1; 
+const InfoSection = styled(motion.div)`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`;
+
+const InfoCard = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--color-card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+`;
+
+const IconWrapper = styled.div`
+    font-size: 2rem;
+    color: var(--color-accent);
+    background-color: rgba(79, 70, 229, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+`;
+
+const InfoText = styled.div`
+    h4 {
+        font-size: 1.2rem;
+        color: var(--color-text);
+        margin-bottom: 0.25rem;
+    }
+    p {
+        font-size: 1rem;
+        color: var(--color-text);
+        opacity: 0.8;
+    }
+`;
+
+const FormSection = styled(motion.form)`
+    flex: 1.5;
     background-color: var(--color-card-bg);
     padding: 3rem;
-    border-radius: 0.7rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
     border: 1px solid var(--color-border);
-    
-    @media (max-width: 900px) {
-        order: 1; 
-        margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
         padding: 1.5rem;
     }
 `;
 
-const NameEmailGroup = styled.div`
+const InputGroup = styled.div`
     display: flex;
-    gap: 1.8rem; 
-    flex-direction: row; 
-    margin-bottom: 1.8rem;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 1rem;
-    }
+    flex-direction: column;
+    gap: 0.5rem;
 `;
 
-const FormGroup = styled.div`
-    flex: 1;
-    margin-bottom: 0;
+const Label = styled.label`
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
 `;
 
 const Input = styled.input`
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.2rem;
-    background-color: var(--color-border); 
-    color: var(--color-text); 
-    border: 1px solid var(--color-border); 
+    padding: 1rem;
     border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 1rem;
     transition: border-color 0.3s;
+    font-family: inherit;
+
     &:focus {
         outline: none;
         border-color: var(--color-accent);
-    }
-
-    @media (max-width: 768px) {
-        padding: 1rem;
-        font-size: 1rem;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
     }
 `;
 
 const TextArea = styled.textarea`
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.2rem;
-    background-color: var(--color-border); 
-    color: var(--color-text); 
-    border: 1px solid var(--color-border); 
+    padding: 1rem;
     border-radius: 0.5rem;
-    resize: none;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 1rem;
+    min-height: 150px;
+    resize: vertical;
     transition: border-color 0.3s;
+    font-family: inherit;
+
     &:focus {
         outline: none;
         border-color: var(--color-accent);
-    }
-
-    @media (max-width: 768px) {
-        padding: 1rem;
-        font-size: 1rem;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
     }
 `;
 
-const SubmitButton = styled.button`
-    width: 100%;
-    background-color: var(--color-accent); 
-    color: white; 
+const SubmitButton = styled(motion.button)`
+    background-color: var(--color-accent);
+    color: var(--color-background);
     font-weight: bold;
-    padding: 1.2rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    padding: 1rem;
     border: none;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
     &:hover {

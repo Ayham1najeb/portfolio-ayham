@@ -2,16 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { useTheme } from '../context/ThemeContext'; 
+import { useLanguage } from '../context/LanguageContext'; 
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'; 
-
-// الروابط بترتيب LTR
-const navLinks = [
-  { title: "الرئيسية", href: "#home" },
-  { title: "من أنا", href: "#about" },
-  { title: "مهاراتي", href: "#skills" },
-  { title: "أعمالي", href: "#projects" },
-  { title: "تواصل معي", href: "#contact" },
-];
 
 // Styled Components
 const NavContainer = styled(motion.nav)`
@@ -40,7 +32,6 @@ const Logo = styled(motion.a)`
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-accent);
-    /* 🛑 تم تثبيت اللون وإزالة تفاعل :hover */
 `;
 
 const NavLinksWrapper = styled.div`
@@ -95,6 +86,7 @@ const ToggleButton = styled(motion.button)`
     color: var(--color-text);
     cursor: pointer;
     margin-left: 2rem; 
+    font-weight: bold;
     transition: color 0.3s;
 
     &:hover {
@@ -114,7 +106,7 @@ const MobileIcons = styled.div`
 `;
 
 const MobileToggle = styled(ToggleButton)`
-    margin-left: 0; 
+    margin-left: 1rem; 
     
     @media (min-width: 769px) {
         display: none; 
@@ -176,7 +168,7 @@ const MobileNavLink = styled.a`
     }
 `;
 
-// Framer Motion Variants (بدون تغيير)
+// Framer Motion Variants 
 const containerVariants = {
   hidden: { opacity: 0, y: -50 },
   visible: {
@@ -202,6 +194,7 @@ const mobileVariants = {
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { language, toggleLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => { 
@@ -209,6 +202,14 @@ const Navbar = () => {
         setIsOpen(false);
     }
   };
+
+  const navLinks = [
+    { title: t("nav_home"), href: "#home" },
+    { title: t("nav_about"), href: "#about" },
+    { title: t("nav_skills"), href: "#skills" },
+    { title: t("nav_projects"), href: "#projects" },
+    { title: t("nav_contact"), href: "#contact" },
+  ];
 
   return (
     <NavContainer
@@ -242,6 +243,11 @@ const Navbar = () => {
                 </NavLink>
             ))}
 
+            {/* زر تبديل اللغة */}
+            <ToggleButton onClick={toggleLanguage} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <span style={{ fontSize: '1.2rem' }}>{language === 'ar' ? 'EN' : 'AR'}</span>
+            </ToggleButton>
+
             {/* زر تبديل الثيم لسطح المكتب */}
             <ToggleButton onClick={toggleTheme} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 {theme === 'light' ? <FiMoon /> : <FiSun />} 
@@ -250,11 +256,17 @@ const Navbar = () => {
 
         {/* 3. مجموعة أيقونات الهاتف (الزر + البرغر) - مرئية فقط على الهاتف */}
         <MobileIcons>
-            {/* زر تبديل الثيم (على اليمين) */}
+            {/* زر تبديل اللغة للهاتف */}
+            <MobileToggle onClick={toggleLanguage} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <span style={{ fontSize: '1.2rem' }}>{language === 'ar' ? 'EN' : 'AR'}</span>
+            </MobileToggle>
+
+            {/* زر تبديل الثيم */}
             <MobileToggle onClick={toggleTheme} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 {theme === 'light' ? <FiMoon /> : <FiSun />} 
             </MobileToggle>
-            {/* أيقونة البرغر (بمسافة مناسبة) */}
+
+            {/* أيقونة البرغر */}
             <MenuIcon onClick={() => setIsOpen(true)}>
                 <FiMenu />
             </MenuIcon>

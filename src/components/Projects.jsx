@@ -2,42 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaExternalLinkAlt, FaCode, FaGithub } from 'react-icons/fa';
-
-// 🛑 بيانات المشاريع (تضمين مسارات صور وهمية - ضع صورك في مجلد public)
-const projectsData = [
-    { 
-        title: "موقع عقارات", 
-        description: "استكشف المنازل التي تناسب أحلامك. مبني باستخدام React وتنسيقات عصرية.", 
-        image: "/project-estate.jpg", 
-        tags: ["React", "Styled-Comp", "Framer Motion"], 
-        link: "#", 
-        code: "#" 
-    },
-    { 
-        title: "لوحة تحكم", 
-        description: "لوحة تحكم شاملة لتحليلات الأعمال وعرض البيانات بشكل مرئي.", 
-        image: "/project-dashboard.jpg", 
-        tags: ["Next.js", "Redux", "API"], 
-        link: "#", 
-        code: "#" 
-    },
-    { 
-        title: "متجر إلكتروني", 
-        description: "منصة تجارة إلكترونية متكاملة مع سلة تسوق ديناميكية وعملية دفع.", 
-        image: "/project-ecommerce.jpg", 
-        tags: ["React", "Node.js", "MongoDB"], 
-        link: "#", 
-        code: "#" 
-    },
-    { 
-        title: "صفحة هبوط NFT", 
-        description: "صفحة هبوط جذابة ومتحركة لعرض المقتنيات الرقمية.", 
-        image: "/project-nft.jpg", 
-        tags: ["Gatsby", "Figma", "Design"], 
-        link: "#", 
-        code: "#" 
-    },
-];
+import { useLanguage } from '../context/LanguageContext'; 
 
 // Styled Components
 const ProjectsWrapper = styled(motion.div)`
@@ -79,7 +44,7 @@ const ProjectsGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
     gap: 3rem; /* زيادة التباعد بين الكروت */
-    text-align: right; /* RTL للمحتوى الداخلي */
+    text-align: start; /* استخدام start بدلاً من right لتناسب اللغتين */
 
     @media (max-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -199,6 +164,7 @@ const LinkButton = styled(motion.a)`
     font-weight: 600;
     transition: color 0.3s;
     font-size: 1.1rem; 
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
@@ -224,6 +190,35 @@ const cardVariants = {
 
 
 const Projects = () => {
+    const { t } = useLanguage();
+
+    const projectsData = [
+        { 
+            title: t('project_ecommerce_title'), 
+            description: t('project_ecommerce_desc'), 
+            image: "/project-ecommerce.jpg", 
+            tags: ["React", "Node.js", "MongoDB"], 
+            link: "#", 
+            code: "#" 
+        },
+        { 
+            title: t('project_dashboard_title'), 
+            description: t('project_dashboard_desc'), 
+            image: "/project-dashboard.jpg", 
+            tags: ["React", "Tailwind", "API"], 
+            link: "#", 
+            code: "#" 
+        },
+        { 
+            title: t('project_social_title'), 
+            description: t('project_social_desc'), 
+            image: "/project-social.jpg", 
+            tags: ["Laravel", "MySQL", "Bootstrap"], 
+            link: "#", 
+            code: "#" 
+        }
+    ];
+
     return (
         <ProjectsWrapper>
             <Title
@@ -231,10 +226,9 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
             >
-                أعمالي
+                {t('projects_title')}
             </Title>
             <Subtitle>
-                مجموعة من أحدث وأفضل مشاريعي التي تبرز مهاراتي المختلفة.
             </Subtitle>
 
             <ProjectsGrid>
@@ -268,11 +262,11 @@ const Projects = () => {
                             {/* 3. أزرار الروابط */}
                             <LinkGroup>
                                 <LinkButton href={project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaExternalLinkAlt /> <span>معاينة</span> 
+                                    <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
                                 </LinkButton>
                                 
                                 <LinkButton href={project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaGithub /> <span>الكود</span>
+                                    <FaGithub /> <span>{t('project_code')}</span>
                                 </LinkButton>
                             </LinkGroup>
                         </CardContent>

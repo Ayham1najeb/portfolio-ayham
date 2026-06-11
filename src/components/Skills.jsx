@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-// 🛑 التعديل: استيراد الأيقونات الجديدة
+import { useLanguage } from '../context/LanguageContext'; 
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaJava, FaPython, FaGitAlt, FaLaravel, FaDatabase, FaLinux, FaPuzzlePiece, FaServer, FaDocker, FaCubes, FaSpaceShuttle, FaWind, FaRobot } from 'react-icons/fa'; 
 
 // 🛑 البيانات (تحديث المهارات)
@@ -120,6 +120,8 @@ const IconWrapper = styled.div`
 `;
 
 const Skills = () => {
+    const { t } = useLanguage();
+
     return (
         <SkillsWrapper>
             <Title
@@ -127,7 +129,7 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
             >
-                مهاراتي
+                {t('skills_title')}
             </Title>
 
             <SkillsGrid

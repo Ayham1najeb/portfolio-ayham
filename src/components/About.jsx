@@ -1,23 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { useLanguage } from '../context/LanguageContext'; 
 
 // Styled Components
 const SectionWrapper = styled(motion.div)`
     max-width: 1000px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    /* 🛑 محاذاة النص والعنوان في المنتصف */
     text-align: center; 
 `;
 
 const Title = styled(motion.h2)`
     font-size: 3.8rem;
     font-weight: 800;
-    /* 💡 لون النص يتغير مع الثيم */
     color: var(--color-text); 
     margin-bottom: 3rem;
-    /* شريط التمييز الأزرق الملكي */
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block;
     padding-bottom: 0.25rem;
@@ -34,7 +32,7 @@ const Paragraph = styled(motion.p)`
     opacity: 0.85; 
     margin-bottom: 1.8rem;
     line-height: 1.8;
-    text-align: justify; /* محاذاة النص ليكون متساوياً من اليمين واليسار */
+    text-align: justify; 
 
     @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -113,6 +111,8 @@ const itemVariants = {
 };
 
 const About = () => {
+    const { t } = useLanguage();
+
     return (
         <SectionWrapper
             variants={sectionVariants}
@@ -121,16 +121,16 @@ const About = () => {
             viewport={{ once: true, amount: 0.2 }}
         >
             <Title variants={itemVariants}>
-                من أنا
+                {t('about_title')}
             </Title>
 
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                 <Paragraph variants={itemVariants}>
-                    أهلاً بك! أنا أيهم نجيب، مهندس برمجيات تخرجت من تركيا ومطور ويب شامل. أمتلك شغفاً كبيراً بتحويل الأفكار البرمجية المعقدة إلى تطبيقات سريعة، تفاعلية، وعالية الأداء. طوال مسيرتي، عملت على مجموعة متنوعة من المشاريع البرمجية التي صقلت مهاراتي التقنية وجعلتني قادراً على إيجاد حلول مبتكرة.
+                    {t('about_p1')}
                 </Paragraph>
 
                 <Paragraph variants={itemVariants}>
-                    أعمل بتطوير الويب باستخدام تقنيات قوية ومطلوبة مثل React JS و Laravel، وأعتمد أدوات حديثة لبناء تجربة مستخدم مبهرة خالية من التعقيد. هدفي دائماً هو كتابة كود نظيف، آمن، وتقديم مشاريع احترافية متكاملة تتحدث عن نفسها، مع الالتزام بأفضل الممارسات البرمجية.
+                    {t('about_p2')}
                 </Paragraph>
                 
                 {/* 🛑 مجموعة الأزرار الجديدة */}
@@ -142,7 +142,7 @@ const About = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                         >
-                            عرض السيرة الذاتية
+                            {t('about_btn_view_cv')}
                         </SecondaryCVButton>
 
                         <CVButton
@@ -150,7 +150,7 @@ const About = () => {
                             download
                             whileHover={{ scale: 1.05 }}
                         >
-                            تحميل السيرة الذاتية
+                            {t('about_btn_download_cv')}
                         </CVButton>
                     </ButtonGroup>
                 </motion.div>

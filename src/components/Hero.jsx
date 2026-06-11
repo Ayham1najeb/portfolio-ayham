@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'; 
-// 🛑 استخدام Typed.js
 import Typed from 'typed.js'; 
+import { useLanguage } from '../context/LanguageContext'; 
 
 // Styled Components
 const HeroContainer = styled.div`
@@ -11,14 +11,12 @@ const HeroContainer = styled.div`
     margin: 0 auto;
     padding: 2rem;
     display: flex; 
-    /* 🛑 التعديل: الصورة على اليمين والنصوص على اليسار */
-    flex-direction: row; /* الصورة يمين، والنص يسار */
+    flex-direction: row; 
     align-items: center;
     justify-content: space-between;
-    gap: 30rem; /* تباعد أفقي كبير */
+    gap: 30rem; 
 
     @media (max-width: 768px) {
-        /* عكس الترتيب على الهاتف: النص أولاً، ثم الصورة */
         flex-direction: column-reverse; 
         text-align: center;
         gap: 2rem;
@@ -27,8 +25,7 @@ const HeroContainer = styled.div`
 
 const TextContent = styled(motion.div)`
     flex: 1;
-    /* 🛑 التعديل: محاذاة النص لليسار */
-    text-align: left; 
+    text-align: start; 
 
     @media (max-width: 768px) {
         text-align: center;
@@ -72,7 +69,6 @@ const SubTitleStatic = styled(motion.p)`
 const ButtonGroup = styled(motion.div)`
     display: flex;
     gap: 1rem;
-    /* 🛑 التعديل: محاذاة الأزرار لليسار */
     justify-content: flex-start; 
 
     @media (max-width: 768px) {
@@ -109,7 +105,6 @@ const Socials = styled(motion.div)`
     display: flex;
     gap: 1rem; 
     margin-top: 2rem;
-    /* 🛑 التعديل: محاذاة أيقونات التواصل لليسار */
     justify-content: flex-start; 
 
     @media (max-width: 768px) {
@@ -183,10 +178,11 @@ const imageVariants = {
 
 const Hero = () => {
     const elRef = useRef(null);
+    const { t, language } = useLanguage();
 
     useEffect(() => {
         const typedOptions = {
-            strings: ["أيهم نجيب", "مهندس برمجيات", "مطور واجهات", "مطور شامل"],
+            strings: [t('hero_name'), t('hero_role_1'), t('hero_role_2'), t('hero_role_3')],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 1500,
@@ -197,19 +193,19 @@ const Hero = () => {
         return () => {
             typed.destroy();
         };
-    }, []); 
+    }, [language, t]); 
 
     return (
         <HeroContainer>
             
-            {/* 1. النصوص والأزرار (على اليسار) */}
+            {/* 1. النصوص والأزرار (على اليسار/اليمين حسب اللغة) */}
             <TextContent
                 initial="hidden"
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
             >
                 <AccentText variants={textVariants}>
-                    أهلاً بك، أنا
+                    {t('hero_greeting')}
                 </AccentText>
                 
                 {/* النص المتحرك (الاسم والتخصص) */}
@@ -221,7 +217,7 @@ const Hero = () => {
                 
                 {/* النص الثابت (SubTitle) */}
                 <SubTitleStatic variants={textVariants}>
-                   أبني حلولاً برمجية عصرية وقابلة للتوسع باستخدام React و Laravel.
+                   {t('hero_description')}
                 </SubTitleStatic>
                 
                 {/* أزرار الإجراءات */}
@@ -230,13 +226,13 @@ const Hero = () => {
                         href="#projects" 
                         whileHover={{ scale: 1.05 }}
                     >
-                        شاهد أعمالي
+                        {t('hero_btn_projects')}
                     </PrimaryButton>
                     <SecondaryButton 
                         href="#contact" 
                         whileHover={{ scale: 1.05 }}
                     >
-                        تواصل معي
+                        {t('hero_btn_contact')}
                     </SecondaryButton>
                 </ButtonGroup>
 
