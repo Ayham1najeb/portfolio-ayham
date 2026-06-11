@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
-// 💡 الأيقونات المُعبأة (Fa) للاتصال والتواصل الاجتماعي
 import { FaEnvelope, FaPhoneAlt, FaLinkedinIn, FaFacebookF, FaGithub } from 'react-icons/fa'; 
+import { useLanguage } from '../context/LanguageContext'; 
 
-// 🛑 المكونات المنسوخة من Hero.jsx لتصميم أيقونات التواصل الاجتماعي
 const IconWrapper = styled(motion.span)`
-    /* الخلفية الدائرية المطابقة لـ Hero */
     background-color: rgba(79, 70, 229, 0.1); 
     border-radius: 50%;
-    width: 2.5rem; /* أصغر قليلاً من القديم لتطابق تصميم الهيرو */
+    width: 2.5rem; 
     height: 2.5rem;
     display: flex;
     align-items: center;
@@ -19,14 +17,11 @@ const IconWrapper = styled(motion.span)`
 `;
 
 const IconLink = styled.a`
-    /* لون الأيقونة المطابق لـ Hero */
     color: var(--color-accent); 
-    font-size: 1.375rem; /* حجم الأيقونة داخل الدائرة */
+    font-size: 1.375rem; 
     display: flex;
 `;
-// 🛑 نهاية المكونات المنسوخة
 
-// Styled Components
 const ContactWrapper = styled(motion.div)`
     max-width: 1200px;
     margin: 0 auto;
@@ -38,7 +33,6 @@ const Title = styled(motion.h2)`
     font-size: 3.8rem;
     font-weight: 800;
     color: var(--color-text); 
-    /* شريط التمييز أسفل العنوان */
     margin-bottom: 3rem; 
     border-bottom: 4px solid var(--color-accent); 
     display: inline-block; 
@@ -64,7 +58,7 @@ const Subtitle = styled.p`
 const ContentGrid = styled.div`
     display: flex;
     gap: 3.5rem; 
-    text-align: right; 
+    text-align: start; 
     
     @media (max-width: 900px) {
         flex-direction: column;
@@ -75,7 +69,7 @@ const InfoSidebar = styled(motion.div)`
     flex: 0 0 380px; 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* التباعد الرأسي بين البطاقات */
+    gap: 1.5rem; 
 
     @media (max-width: 900px) {
         order: 2; 
@@ -92,7 +86,7 @@ const InfoCard = styled(motion.div)`
     border: 1px solid var(--color-border);
     display: flex;
     align-items: center;
-    gap: 1.2rem; /* استبدال الـ margin ليكون متوافق مع RTL */
+    gap: 1.2rem; 
     transition: box-shadow 0.3s;
     
     & > svg { 
@@ -110,144 +104,116 @@ const InfoCard = styled(motion.div)`
 
         & > svg {
             font-size: 1.5rem;
-        margin-bottom: 2rem;
+        }
+
+        & > div > p:first-child {
+            font-size: 0.95rem !important;
+        }
+
+        & > div > p:last-child {
+            font-size: 0.85rem !important;
+        }
     }
 `;
 
-const ContactContent = styled.div`
+const SocialsContainer = styled.div`
     display: flex;
-    flex-direction: row; 
-    gap: 4rem;
+    gap: 1.5rem; 
+    margin-top: 1.5rem;
+    padding: 0 2rem; 
 
-    @media (max-width: 992px) {
-        flex-direction: column;
-        gap: 2rem;
+    @media (max-width: 900px) {
+        justify-content: center;
+        padding: 0;
     }
 `;
 
-const InfoSection = styled(motion.div)`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-`;
-
-const InfoCard = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background-color: var(--color-card-bg);
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
-    transition: transform 0.3s;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-`;
-
-const IconWrapper = styled.div`
-    font-size: 2rem;
-    color: var(--color-accent);
-    background-color: rgba(79, 70, 229, 0.1);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-`;
-
-const InfoText = styled.div`
-    h4 {
-        font-size: 1.2rem;
-        color: var(--color-text);
-        margin-bottom: 0.25rem;
-    }
-    p {
-        font-size: 1rem;
-        color: var(--color-text);
-        opacity: 0.8;
-    }
-`;
-
-const FormSection = styled(motion.form)`
-    flex: 1.5;
+const FormArea = styled(motion.form)`
+    flex: 1; 
     background-color: var(--color-card-bg);
     padding: 3rem;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    @media (max-width: 768px) {
+    
+    @media (max-width: 900px) {
+        order: 1; 
+        margin-bottom: 2rem;
         padding: 1.5rem;
     }
 `;
 
-const InputGroup = styled.div`
+const NameEmailGroup = styled.div`
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.8rem; 
+    flex-direction: row; 
+    margin-bottom: 1.8rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
 `;
 
-const Label = styled.label`
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
+const FormGroup = styled.div`
+    flex: 1;
+    margin-bottom: 0;
 `;
 
 const Input = styled.input`
-    padding: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    background-color: var(--color-border); 
+    color: var(--color-text); 
+    border: 1px solid var(--color-border); 
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-size: 1rem;
     transition: border-color 0.3s;
-    font-family: inherit;
-
     &:focus {
         outline: none;
         border-color: var(--color-accent);
-        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
     }
 `;
 
 const TextArea = styled.textarea`
-    padding: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    background-color: var(--color-border); 
+    color: var(--color-text); 
+    border: 1px solid var(--color-border); 
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-size: 1rem;
-    min-height: 150px;
-    resize: vertical;
+    resize: none;
     transition: border-color 0.3s;
-    font-family: inherit;
-
     &:focus {
         outline: none;
         border-color: var(--color-accent);
-        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: 1rem;
     }
 `;
 
-const SubmitButton = styled(motion.button)`
-    background-color: var(--color-accent);
-    color: var(--color-background);
+const SubmitButton = styled.button`
+    width: 100%;
+    background-color: var(--color-accent); 
+    color: white; 
     font-weight: bold;
-    font-size: 1.1rem;
-    padding: 1rem;
-    border: none;
+    padding: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 0.5rem;
+    border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     &:hover {
-        background-color: #3730A3;
+        background-color: #3730A3; 
     }
 
     @media (max-width: 768px) {
@@ -266,6 +232,7 @@ const StatusMessage = styled.p`
 
 
 const Contact = () => {
+    const { t } = useLanguage();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
@@ -279,7 +246,6 @@ const Contact = () => {
         setStatus("جاري الإرسال...");
         setIsSuccess(false);
 
-        // 🛑 IDs المستخدمة في الكود (مفترض أنها صحيحة الآن)
         const SERVICE_ID = "service_uszqsto"; 
         const TEMPLATE_ID = "template_svh9u6f";
         const USER_ID = "Plji6Sr9AJJ6-4tUx";
@@ -301,9 +267,8 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
         >
-            <Title>تواصل معي</Title>
+            <Title>{t('contact_title')}</Title>
             <Subtitle>
-                لا تتردد في التواصل معي في أي وقت، يسعدني جداً الاستماع إليك!
             </Subtitle>
 
               <ContentGrid>
@@ -319,8 +284,8 @@ const Contact = () => {
                     <InfoCard>
                         <FaEnvelope /> 
                         <div> 
-                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>البريد الإلكتروني</p>
-                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'right' }}>ayhamoy2@gmail.com</p>
+                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>{t('contact_email')}</p>
+                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'start' }}>ayhamoy2@gmail.com</p>
                         </div>
                     </InfoCard>
 
@@ -328,8 +293,8 @@ const Contact = () => {
                     <InfoCard>
                         <FaPhoneAlt /> 
                         <div> 
-                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>رقم الهاتف</p>
-                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'right' }}>05519547382</p>
+                            <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>{t('contact_phone')}</p>
+                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'start' }}>05519547382</p>
                         </div>
                     </InfoCard>
                     
@@ -384,19 +349,19 @@ const Contact = () => {
                     
                     <NameEmailGroup>
                         <FormGroup>
-                            <Input type="text" id="name" name="name" placeholder="اسمك" value={formData.name} onChange={handleChange} required />
+                            <Input type="text" id="name" name="name" placeholder={t('contact_form_name')} value={formData.name} onChange={handleChange} required />
                         </FormGroup>
                         <FormGroup>
-                            <Input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" value={formData.email} onChange={handleChange} required />
+                            <Input type="email" id="email" name="email" placeholder={t('contact_form_email')} value={formData.email} onChange={handleChange} required />
                         </FormGroup>
                     </NameEmailGroup>
                     
                     <FormGroup>
-                        <TextArea id="message" name="message" placeholder="رسالتك..." value={formData.message} onChange={handleChange} required rows="6"></TextArea> 
+                        <TextArea id="message" name="message" placeholder={t('contact_form_message')} value={formData.message} onChange={handleChange} required rows="6"></TextArea> 
                     </FormGroup>
                     
                     <SubmitButton type="submit">
-                        إرسال الرسالة
+                        {t('contact_btn_send')}
                     </SubmitButton>
 
                     {/* Submission Status */}
