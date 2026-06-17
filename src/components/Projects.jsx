@@ -560,7 +560,7 @@ const Projects = () => {
             tags: ["Laravel", "Livewire", "Tailwind CSS", "Stripe API", "MySQL"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/my-shop",
-            image: `${import.meta.env.BASE_URL}projects/myshop/1.jpg`,
+            image: `${import.meta.env.BASE_URL}projects/myshop/cover.jpg`,
             gallery: Array.from({ length: 19 }, (_, i) => `${import.meta.env.BASE_URL}projects/myshop/${i + 1}.jpg`)
         },
         { 
