@@ -127,6 +127,10 @@ Error generating stack: `+l.message+`
     margin-left: 2rem; 
     font-weight: bold;
     transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(2px);
 
     &:hover {
         color: var(--color-accent);
@@ -141,6 +145,10 @@ Error generating stack: `+l.message+`
     }
 `,h2=X(Rf)`
     margin-left: 1rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(2px);
     
     @media (min-width: 769px) {
         display: none; 
