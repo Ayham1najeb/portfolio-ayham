@@ -118,5 +118,65 @@ export const translations = {
 
         // Footer
         footer_rights: "All rights reserved."
+    },
+    tr: {
+        // Navbar
+        nav_home: "Ana Sayfa",
+        nav_about: "Hakkımda",
+        nav_skills: "Yetenekler",
+        nav_projects: "Projelerim",
+        nav_contact: "İletişim",
+
+        // Hero
+        hero_greeting: "Merhaba! Ben",
+        hero_name: "Ayham Najib",
+        hero_role_1: "Yazılım Mühendisi",
+        hero_role_2: "Full Stack Geliştirici",
+        hero_role_3: "Siber Güvenlik",
+        hero_description: "Yaratıcı bir dokunuş ve yüksek performansla entegre yazılım çözümleri üretiyor, fikirleri gerçeğe dönüştürmeyi seviyorum.",
+        hero_btn_projects: "Çalışmalarımı Gör",
+        hero_btn_contact: "Bana Ulaş",
+
+        // About
+        about_title: "Hakkımda",
+        about_greeting: "Merhaba! Ben Ayham Najib.",
+        about_p1: "Tutkulu bir Yazılım Mühendisi ve Full Stack Web Geliştiricisiyim, Türkiye'deki üniversitelerden mezun oldum (2022-2026).",
+        about_p2: "Önyüzde React ve arkayüzde Laravel gibi modern teknolojileri kullanarak gelişmiş ve güvenilir web uygulamaları geliştirme konusunda pratik deneyime sahibim.",
+        about_p3: "Karmaşık yazılım çözümleri ve modern tasarımlar gerektiren çeşitli projelerde çalıştım ve yeteneklerimi geliştirmek ve en iyi kullanıcı deneyimini sunmak için sürekli olarak teknoloji dünyasındaki en son yenilikleri öğrenmeye çalışıyorum.",
+        about_btn_view_cv: "Özgeçmişi Gör",
+        about_btn_download_cv: "Özgeçmişi İndir",
+
+        // Skills
+        skills_title: "Yeteneklerim",
+
+        // Projects
+        projects_title: "Projelerim",
+        project_view: "Projeyi Gör",
+        project_gallery: "Görselleri Gör",
+        project_code: "Kaynak Kodu",
+        // Real Projects
+        project_isbul_title: "İşBul — İş Arama Platformu",
+        project_isbul_desc: "İşverenler ve iş arayanları birbirine bağlayan, akıllı filtreleme ve iş ilanları ile özgeçmişlerin tam yönetimini sağlayan 60'tan fazla API ile oluşturulmuş güçlü ve kapsamlı bir işe alım platformu.",
+        project_velora_title: "Velora Clinic — Klinik Yönetim Sistemi",
+        project_velora_desc: "Randevu alma, hasta kayıtları yönetimi ve doktorlar ile yöneticiler için kapsamlı bir kontrol paneli içeren bir tıbbi klinik yönetim sistemi için profesyonel bir arayüz.",
+        project_myshop_title: "My Shop — E-Ticaret Mağazası",
+        project_myshop_desc: "StoreCommerce — Kapsamlı e-ticaret platformu. Mağazaları müşterilerle bağlayan, akıllı arama ve filtreleme sistemi, gelişmiş kargo takibi, kapsamlı envanter, sipariş ve indirim yönetimi, küresel ödeme ağ geçitleri (Stripe) desteği ve konuma dayalı kargo fiyatlandırması ile inceleme yönetimi ve çoklu dil desteği sağlayan gelişmiş kontrol paneline sahip 80'den fazla API ucuyla oluşturulmuş güçlü ve tam donanımlı bir çevrimiçi alışveriş platformu.",
+        project_smartfile_title: "SmartFileHub — Belge Yönetim Platformu",
+        project_smartfile_desc: "Kurumsal ölçekte belgeleri işlemek için gelişmiş ve güvenli bir bulut platformu. Güçlü bir mimari ve 130'dan fazla API ucu ile oluşturulmuş olup, ultra hızlı dosya dönüştürme, düzenleme ve üst düzey veri koruması için profesyonel araçlar sunar.",
+        project_pharmacy_title: "Pharmacy — Eczane Yönetim Sistemi",
+        project_pharmacy_desc: "Kullanımı kolay bir arayüz ile envanter takibi, ilaç ve reçete yönetimi ve satış raporlaması içeren kapsamlı bir eczane yönetim sistemi.",
+
+        // Contact
+        contact_title: "Bana Ulaş",
+        contact_phone: "Telefon Numarası",
+        contact_email: "E-posta Adresi",
+        contact_social: "Sosyal Medya",
+        contact_form_name: "Adınız",
+        contact_form_email: "E-posta Adresiniz",
+        contact_form_message: "Mesajınız...",
+        contact_btn_send: "Mesaj Gönder",
+
+        // Footer
+        footer_rights: "Tüm hakları saklıdır."
     }
 };

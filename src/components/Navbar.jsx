@@ -245,7 +245,7 @@ const Navbar = () => {
 
             {/* زر تبديل اللغة */}
             <ToggleButton onClick={toggleLanguage} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <span style={{ fontSize: '1.2rem' }}>{language === 'ar' ? 'AR' : 'EN'}</span>
+                <span style={{ fontSize: '1.2rem' }}>{language.toUpperCase()}</span>
             </ToggleButton>
 
             {/* زر تبديل الثيم لسطح المكتب */}
@@ -258,7 +258,7 @@ const Navbar = () => {
         <MobileIcons>
             {/* زر تبديل اللغة للهاتف */}
             <MobileToggle onClick={toggleLanguage} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <span style={{ fontSize: '1.2rem' }}>{language === 'ar' ? 'AR' : 'EN'}</span>
+                <span style={{ fontSize: '1.2rem' }}>{language.toUpperCase()}</span>
             </MobileToggle>
 
             {/* زر تبديل الثيم */}
