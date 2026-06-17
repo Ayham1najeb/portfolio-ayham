@@ -543,22 +543,13 @@ const Projects = () => {
 
     const projectsData = [
         { 
-            title: t('project_isbul_title'), 
-            description: t('project_isbul_desc'), 
-            tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
-            link: "#", 
-            code: "https://github.com/Ayham1najeb/IsBul-Job-Platform",
-            image: null,
-            gallery: []
-        },
-        { 
-            title: t('project_velora_title'), 
-            description: t('project_velora_desc'), 
-            tags: ["React", "Styled Components", "REST API"], 
-            link: "#", 
-            code: "https://github.com/Ayham1najeb/velora-clinic-frontend",
-            image: `${import.meta.env.BASE_URL}projects/velora/5.png`,
-            gallery: Array.from({ length: 16 }, (_, i) => `${import.meta.env.BASE_URL}projects/velora/${i + 1}.png`)
+            title: t('project_smartfile_title'), 
+            description: t('project_smartfile_desc'), 
+            tags: ["React", "Vite", "MUI", "Cloudflare"], 
+            link: "https://smartfilehub.com/", 
+            code: "#",
+            image: `${import.meta.env.BASE_URL}projects/smartfilehub/1.png`,
+            gallery: Array.from({ length: 17 }, (_, i) => `${import.meta.env.BASE_URL}projects/smartfilehub/${i + 1}.png`)
         },
         { 
             title: t('project_myshop_title'), 
@@ -570,13 +561,22 @@ const Projects = () => {
             gallery: Array.from({ length: 19 }, (_, i) => `${import.meta.env.BASE_URL}projects/myshop/${i + 1}.jpg`)
         },
         { 
-            title: t('project_smartfile_title'), 
-            description: t('project_smartfile_desc'), 
-            tags: ["React", "Vite", "MUI", "Cloudflare"], 
-            link: "https://smartfilehub.com/", 
-            code: "#",
-            image: `${import.meta.env.BASE_URL}projects/smartfilehub/1.png`,
-            gallery: Array.from({ length: 17 }, (_, i) => `${import.meta.env.BASE_URL}projects/smartfilehub/${i + 1}.png`)
+            title: t('project_velora_title'), 
+            description: t('project_velora_desc'), 
+            tags: ["React", "Styled Components", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/velora-clinic-frontend",
+            image: `${import.meta.env.BASE_URL}projects/velora/5.png`,
+            gallery: Array.from({ length: 16 }, (_, i) => `${import.meta.env.BASE_URL}projects/velora/${i + 1}.png`)
+        },
+        { 
+            title: t('project_isbul_title'), 
+            description: t('project_isbul_desc'), 
+            tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/IsBul-Job-Platform",
+            image: null,
+            gallery: []
         },
         { 
             title: t('project_pharmacy_title'), 
