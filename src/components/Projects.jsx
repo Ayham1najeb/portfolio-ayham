@@ -560,8 +560,8 @@ const Projects = () => {
             tags: ["Laravel", "Livewire", "Tailwind CSS", "Stripe API", "MySQL"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/my-shop",
-            image: null,
-            gallery: []
+            image: `${import.meta.env.BASE_URL}projects/myshop/1.jpg`,
+            gallery: Array.from({ length: 19 }, (_, i) => `${import.meta.env.BASE_URL}projects/myshop/${i + 1}.jpg`)
         },
         { 
             title: t('project_smartfile_title'), 
