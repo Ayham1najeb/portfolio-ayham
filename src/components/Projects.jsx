@@ -486,6 +486,8 @@ const GalleryModal = ({ images, isOpen, onClose, projectTitle }) => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -40 }}
                             transition={{ duration: 0.25 }}
+                            draggable="false"
+                            onContextMenu={(e) => e.preventDefault()}
                         />
                     </AnimatePresence>
 
@@ -507,7 +509,7 @@ const GalleryModal = ({ images, isOpen, onClose, projectTitle }) => {
                             $active={i === currentIndex}
                             onClick={() => setCurrentIndex(i)}
                         >
-                            <img src={img} alt={`thumb-${i + 1}`} />
+                            <img src={img} alt={`thumb-${i + 1}`} draggable="false" onContextMenu={(e) => e.preventDefault()} />
                         </Thumbnail>
                     ))}
                 </ThumbnailStrip>
@@ -608,7 +610,7 @@ const Projects = () => {
                         {/* صورة المشروع */}
                         {project.image && (
                             <ProjectImage onClick={() => project.gallery.length > 0 && openGallery(project.gallery, project.title)}>
-                                <img src={project.image} alt={project.title} loading="lazy" />
+                                <img src={project.image} alt={project.title} loading="lazy" draggable="false" onContextMenu={(e) => e.preventDefault()} />
                                 {project.gallery.length > 0 && (
                                     <>
                                         <GalleryBadge>
