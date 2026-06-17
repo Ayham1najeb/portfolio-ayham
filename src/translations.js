@@ -42,7 +42,7 @@ export const translations = {
         project_myshop_title: "My Shop — متجر إلكتروني",
         project_myshop_desc: "StoreCommerce — منصة تجارة إلكترونية شاملة منصة تسوق إلكتروني متكاملة وقوية تربط بين المتجر والعملاء، مبنية بأكثر من 80 نقطة نهاية (API/Routes) مع نظام بحث وتصفية ذكي، تتبع متقدم للشحنات، إدارة شاملة للمخزون والطلبات والخصومات، ودعم بوابات الدفع العالمية (Stripe) مع لوحة تحكم متطورة لتسعير الشحن حسب المناطق الجغرافية وإدارة التقييمات وتعدد اللغات.",
         project_smartfile_title: "SmartFileHub — منصة إدارة المستندات",
-        project_smartfile_desc: "منصة سحابية متطورة وآمنة لإدارة ومعالجة المستندات بمقاييس مؤسسية. مبنية بهندسة برمجية ضخمة تتجاوز 90 ألف سطر كود، وتوفر أكثر من 130 نقطة نهاية (API) مع أدوات احترافية لتحويل وتنظيم الملفات بسرعة فائقة وحماية متقدمة للبيانات.",
+        project_smartfile_desc: "منصة سحابية متطورة وآمنة لإدارة ومعالجة المستندات بمقاييس مؤسسية. مبنية بهندسة برمجية قوية توفر أكثر من 130 نقطة نهاية (API) مع أدوات احترافية لتحويل وتنظيم الملفات بسرعة فائقة وحماية متقدمة للبيانات.",
         project_pharmacy_title: "Pharmacy — نظام إدارة الصيدلية",
         project_pharmacy_desc: "نظام متكامل لإدارة الصيدليات يشمل تتبع المخزون، إدارة الأدوية والوصفات الطبية، وتقارير المبيعات بواجهة سهلة الاستخدام.",
 
@@ -102,7 +102,7 @@ export const translations = {
         project_myshop_title: "My Shop — E-Commerce Store",
         project_myshop_desc: "StoreCommerce — A comprehensive e-commerce platform. A powerful, fully-featured online shopping platform connecting stores with customers, built with over 80 API endpoints. It features a smart search and filtering system, advanced shipment tracking, comprehensive inventory, order, and discount management, global payment gateways (Stripe) support, and an advanced dashboard for location-based shipping pricing, reviews management, and multi-language support.",
         project_smartfile_title: "SmartFileHub — Document Platform",
-        project_smartfile_desc: "An advanced, secure cloud platform for document processing at enterprise scale. Built with a massive architecture exceeding 90,000 lines of code and over 130 API endpoints, it provides professional tools for ultra-fast file conversion, organization, and top-tier data protection.",
+        project_smartfile_desc: "An advanced, secure cloud platform for document processing at enterprise scale. Built with a robust architecture and over 130 API endpoints, it provides professional tools for ultra-fast file conversion, organization, and top-tier data protection.",
         project_pharmacy_title: "Pharmacy — Pharmacy Management",
         project_pharmacy_desc: "A comprehensive pharmacy management system featuring inventory tracking, medication and prescription management, and sales reporting with an intuitive user interface.",
 
