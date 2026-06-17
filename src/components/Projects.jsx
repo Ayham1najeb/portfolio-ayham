@@ -569,8 +569,8 @@ const Projects = () => {
             tags: ["React", "Vite", "MUI", "Cloudflare"], 
             link: "https://smartfilehub.com/", 
             code: "#",
-            image: null,
-            gallery: []
+            image: `${import.meta.env.BASE_URL}projects/smartfilehub/1.png`,
+            gallery: Array.from({ length: 17 }, (_, i) => `${import.meta.env.BASE_URL}projects/smartfilehub/${i + 1}.png`)
         },
         { 
             title: t('project_pharmacy_title'), 
@@ -652,10 +652,15 @@ const Projects = () => {
                                         <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
                                     </LinkButton>
                                 )}
-                                
-                                <LinkButton href={project.code !== "#" ? project.code : project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaGithub /> <span>{t('project_code')}</span>
-                                </LinkButton>
+                                {project.code !== "#" ? (
+                                    <LinkButton href={project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
+                                        <FaGithub /> <span>{t('project_code')}</span>
+                                    </LinkButton>
+                                ) : project.gallery.length > 0 ? (
+                                    <LinkButton as="button" style={{ background: 'transparent', border: 'none', padding: 0 }} onClick={() => openGallery(project.gallery, project.title)} whileHover={{ scale: 1.05 }}>
+                                        <FaImages /> <span>{t('project_gallery')}</span> 
+                                    </LinkButton>
+                                ) : null}
                             </LinkGroup>
                         </CardContent>
                     </ProjectCard>
