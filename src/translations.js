@@ -32,6 +32,7 @@ export const translations = {
         // Projects
         projects_title: "أبرز مشاريعي",
         project_view: "عرض المشروع",
+        project_gallery: "عرض الصور",
         project_code: "الكود المصدري",
         // Real Projects
         project_isbul_title: "İşBul — منصة البحث عن وظائف",
@@ -91,6 +92,7 @@ export const translations = {
         // Projects
         projects_title: "My Projects",
         project_view: "Live Demo",
+        project_gallery: "View Images",
         project_code: "Source Code",
         // Real Projects
         project_isbul_title: "İşBul — Job Search Platform",

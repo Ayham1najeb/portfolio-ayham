@@ -55,8 +55,6 @@ const ModalImage = styled(motion.img)`
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 25px 80px rgba(0,0,0,0.6);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 `;
 
 const NavButton = styled.button`
@@ -260,7 +258,6 @@ const ProjectImage = styled.div`
         object-fit: cover;
         object-position: top center;
         transition: transform 0.6s ease;
-        image-rendering: -webkit-optimize-contrast;
     }
     
     ${ProjectCard}:hover & > img { 
@@ -401,6 +398,7 @@ const LinkButton = styled(motion.a)`
     transition: color 0.3s;
     font-size: 1.1rem; 
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
         text-decoration: underline;
@@ -641,9 +639,19 @@ const Projects = () => {
 
                             {/* أزرار الروابط */}
                             <LinkGroup>
-                                <LinkButton href={project.link !== "#" ? project.link : project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
-                                    <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
-                                </LinkButton>
+                                {project.link !== "#" ? (
+                                    <LinkButton href={project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
+                                        <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
+                                    </LinkButton>
+                                ) : project.gallery.length > 0 ? (
+                                    <LinkButton as="button" style={{ background: 'transparent', border: 'none', padding: 0 }} onClick={() => openGallery(project.gallery, project.title)} whileHover={{ scale: 1.05 }}>
+                                        <FaImages /> <span>{t('project_gallery')}</span> 
+                                    </LinkButton>
+                                ) : (
+                                    <LinkButton href={project.code} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
+                                        <FaExternalLinkAlt /> <span>{t('project_view')}</span> 
+                                    </LinkButton>
+                                )}
                                 
                                 <LinkButton href={project.code !== "#" ? project.code : project.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }}>
                                     <FaGithub /> <span>{t('project_code')}</span>
