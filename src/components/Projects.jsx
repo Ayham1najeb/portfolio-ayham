@@ -557,7 +557,7 @@ const Projects = () => {
         { 
             title: t('project_myshop_title'), 
             description: t('project_myshop_desc'), 
-            tags: ["React", "Node.js", "MongoDB"], 
+            tags: ["Laravel", "Livewire", "Tailwind CSS", "Stripe API", "MySQL"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/my-shop",
             image: null,
