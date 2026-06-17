@@ -354,6 +354,10 @@ const ProjectDescription = styled.p`
     font-size: 1.1rem;
     margin-bottom: 1.2rem;
     line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
     @media (max-width: 768px) {
         font-size: 0.95rem;
