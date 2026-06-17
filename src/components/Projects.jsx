@@ -422,8 +422,8 @@ const Projects = () => {
             tags: ["React", "Styled Components", "REST API"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/velora-clinic-frontend",
-            image: "/projects/velora/5.png",
-            gallery: Array.from({ length: 16 }, (_, i) => `/projects/velora/${i + 1}.png`)
+            image: `${import.meta.env.BASE_URL}projects/velora/5.png`,
+            gallery: Array.from({ length: 16 }, (_, i) => `${import.meta.env.BASE_URL}projects/velora/${i + 1}.png`)
         },
         { 
             title: t('project_myshop_title'), 
