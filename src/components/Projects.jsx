@@ -617,9 +617,7 @@ const Projects = () => {
                                 <img src={project.image} alt={project.title} loading="lazy" draggable="false" onContextMenu={(e) => e.preventDefault()} />
                                 {project.gallery.length > 0 && (
                                     <>
-                                        <GalleryBadge>
-                                            <FaImages /> {project.gallery.length}
-                                        </GalleryBadge>
+
                                         <ImageOverlay>
                                             <ViewGalleryBtn>
                                                 <FaImages /> عرض جميع الصور
