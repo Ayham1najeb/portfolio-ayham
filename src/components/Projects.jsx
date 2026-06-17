@@ -569,7 +569,7 @@ const Projects = () => {
             tags: ["React", "Vite", "MUI", "Cloudflare"], 
             link: "https://smartfilehub.com/", 
             code: "#",
-            image: `${import.meta.env.BASE_URL}projects/smartfilehub/cover.png?v=2`,
+            image: `${import.meta.env.BASE_URL}projects/smartfilehub/1.png`,
             gallery: Array.from({ length: 17 }, (_, i) => `${import.meta.env.BASE_URL}projects/smartfilehub/${i + 1}.png`)
         },
         { 
