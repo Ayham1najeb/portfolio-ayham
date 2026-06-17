@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { FaExternalLinkAlt, FaGithub, FaImages, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
@@ -11,19 +11,39 @@ const ModalOverlay = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(5, 5, 15, 0.96);
     z-index: 9999;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+`;
+
+const ModalHeader = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    z-index: 10002;
+`;
+
+const ModalTitle = styled.h3`
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    font-weight: 600;
 `;
 
 const ModalContent = styled(motion.div)`
     position: relative;
-    width: 90%;
-    max-width: 1100px;
-    height: 80vh;
+    width: 92%;
+    max-width: 1200px;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,81 +53,135 @@ const ModalImage = styled(motion.img)`
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 `;
 
 const NavButton = styled.button`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(79, 70, 229, 0.7);
-    border: none;
+    background: rgba(79, 70, 229, 0.6);
+    border: 1px solid rgba(79, 70, 229, 0.3);
     color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    transition: all 0.3s;
-    z-index: 10;
-
-    &:hover {
-        background: rgba(79, 70, 229, 1);
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    &.prev { left: -60px; }
-    &.next { right: -60px; }
-
-    @media (max-width: 768px) {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        &.prev { left: 5px; }
-        &.next { right: 5px; }
-    }
-`;
-
-const CloseButton = styled.button`
-    position: fixed;
-    top: 25px;
-    right: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    width: 45px;
-    height: 45px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+
+    &:hover {
+        background: rgba(79, 70, 229, 0.95);
+        transform: translateY(-50%) scale(1.12);
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+    }
+
+    &.prev { left: -65px; }
+    &.next { right: -65px; }
+
+    @media (max-width: 900px) {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+        &.prev { left: 8px; }
+        &.next { right: 8px; }
+        background: rgba(79, 70, 229, 0.8);
+    }
+`;
+
+const CloseButton = styled.button`
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
     transition: all 0.3s;
-    z-index: 10001;
 
     &:hover {
         background: rgba(239, 68, 68, 0.8);
         border-color: transparent;
+        transform: scale(1.1);
     }
 `;
 
 const ImageCounter = styled.div`
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.7);
-    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
     font-weight: 500;
-    background: rgba(0,0,0,0.5);
-    padding: 0.5rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    padding: 0.4rem 1.2rem;
     border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
     z-index: 10001;
+`;
+
+// Thumbnail Strip
+const ThumbnailStrip = styled.div`
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    max-width: 90vw;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(79, 70, 229, 0.5);
+        border-radius: 2px;
+    }
+`;
+
+const Thumbnail = styled.button`
+    width: 56px;
+    height: 36px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid ${props => props.$active ? 'rgba(79, 70, 229, 1)' : 'transparent'};
+    cursor: pointer;
+    padding: 0;
+    opacity: ${props => props.$active ? '1' : '0.5'};
+    transition: all 0.3s;
+    flex-shrink: 0;
+    background: transparent;
+
+    &:hover {
+        opacity: 1;
+        border-color: rgba(79, 70, 229, 0.6);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 `;
 
 // ============== Project Card Styles ==============
@@ -159,64 +233,99 @@ const ProjectsGrid = styled.div`
 
 const ProjectCard = styled(motion.div)`
     background-color: var(--color-card-bg); 
-    border-radius: 0.7rem;
+    border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--color-border); 
     overflow: hidden; 
-    transition: box-shadow 0.3s;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
 
     &:hover {
-        box-shadow: 0 0 35px rgba(79, 70, 229, 0.4); 
+        box-shadow: 0 0 35px rgba(79, 70, 229, 0.4);
+        transform: translateY(-4px);
     }
 `;
 
 const ProjectImage = styled.div`
     width: 100%;
-    height: 220px; 
+    height: 240px; 
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 
     & > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        object-position: top center;
+        transition: transform 0.6s ease;
+        image-rendering: -webkit-optimize-contrast;
     }
     
     ${ProjectCard}:hover & > img { 
-        transform: scale(1.08); 
+        transform: scale(1.06); 
     }
 
     @media (max-width: 768px) {
-        height: 160px;
+        height: 180px;
     }
 `;
 
-const GalleryBadge = styled.button`
+const ImageOverlay = styled.div`
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(79, 70, 229, 0.85);
-    border: none;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+    opacity: 0;
+    transition: opacity 0.3s;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    z-index: 2;
-    backdrop-filter: blur(4px);
+    justify-content: center;
 
-    &:hover {
-        background: rgba(79, 70, 229, 1);
-        transform: scale(1.05);
+    ${ProjectImage}:hover & {
+        opacity: 1;
     }
+`;
+
+const ViewGalleryBtn = styled.span`
+    background: rgba(79, 70, 229, 0.9);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.15);
+    transform: translateY(10px);
+    transition: transform 0.3s;
+
+    ${ProjectImage}:hover & {
+        transform: translateY(0);
+    }
+`;
+
+const GalleryBadge = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 2;
 `;
 
 const CardContent = styled.div`
@@ -247,6 +356,7 @@ const ProjectDescription = styled.p`
     opacity: 0.7;
     font-size: 1.1rem;
     margin-bottom: 1.2rem;
+    line-height: 1.7;
 
     @media (max-width: 768px) {
         font-size: 0.95rem;
@@ -318,71 +428,92 @@ const cardVariants = {
 const GalleryModal = ({ images, isOpen, onClose, projectTitle }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const goNext = (e) => {
-        e.stopPropagation();
+    const goNext = useCallback((e) => {
+        if (e) e.stopPropagation();
         setCurrentIndex((prev) => (prev + 1) % images.length);
-    };
+    }, [images.length]);
 
-    const goPrev = (e) => {
-        e.stopPropagation();
+    const goPrev = useCallback((e) => {
+        if (e) e.stopPropagation();
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-    };
+    }, [images.length]);
 
     // Handle keyboard navigation
     React.useEffect(() => {
         if (!isOpen) return;
         const handleKey = (e) => {
-            if (e.key === 'ArrowRight') setCurrentIndex((prev) => (prev + 1) % images.length);
-            if (e.key === 'ArrowLeft') setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+            if (e.key === 'ArrowRight') goNext();
+            if (e.key === 'ArrowLeft') goPrev();
             if (e.key === 'Escape') onClose();
         };
         window.addEventListener('keydown', handleKey);
         return () => window.removeEventListener('keydown', handleKey);
-    }, [isOpen, images.length, onClose]);
+    }, [isOpen, goNext, goPrev, onClose]);
 
     // Reset index when opening
     React.useEffect(() => {
         if (isOpen) setCurrentIndex(0);
     }, [isOpen]);
 
+    if (!isOpen) return null;
+
     return (
         <AnimatePresence>
-            {isOpen && (
-                <ModalOverlay
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={onClose}
-                >
+            <ModalOverlay
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={onClose}
+            >
+                {/* Header */}
+                <ModalHeader>
+                    <ModalTitle>{projectTitle}</ModalTitle>
                     <CloseButton onClick={onClose}>
                         <FaTimes />
                     </CloseButton>
+                </ModalHeader>
 
-                    <ModalContent onClick={(e) => e.stopPropagation()}>
-                        <NavButton className="prev" onClick={goPrev}>
-                            <FaChevronLeft />
-                        </NavButton>
+                {/* Main Image */}
+                <ModalContent onClick={(e) => e.stopPropagation()}>
+                    <NavButton className="prev" onClick={goPrev}>
+                        <FaChevronLeft />
+                    </NavButton>
 
+                    <AnimatePresence mode="wait">
                         <ModalImage
                             key={currentIndex}
                             src={images[currentIndex]}
                             alt={`${projectTitle} - ${currentIndex + 1}`}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.3 }}
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -40 }}
+                            transition={{ duration: 0.25 }}
                         />
+                    </AnimatePresence>
 
-                        <NavButton className="next" onClick={goNext}>
-                            <FaChevronRight />
-                        </NavButton>
-                    </ModalContent>
+                    <NavButton className="next" onClick={goNext}>
+                        <FaChevronRight />
+                    </NavButton>
+                </ModalContent>
 
-                    <ImageCounter>
-                        {currentIndex + 1} / {images.length}
-                    </ImageCounter>
-                </ModalOverlay>
-            )}
+                {/* Counter */}
+                <ImageCounter>
+                    {currentIndex + 1} / {images.length}
+                </ImageCounter>
+
+                {/* Thumbnail Strip */}
+                <ThumbnailStrip onClick={(e) => e.stopPropagation()}>
+                    {images.map((img, i) => (
+                        <Thumbnail
+                            key={i}
+                            $active={i === currentIndex}
+                            onClick={() => setCurrentIndex(i)}
+                        >
+                            <img src={img} alt={`thumb-${i + 1}`} />
+                        </Thumbnail>
+                    ))}
+                </ThumbnailStrip>
+            </ModalOverlay>
         </AnimatePresence>
     );
 };
@@ -401,10 +532,10 @@ const Projects = () => {
         document.body.style.overflow = 'hidden';
     };
 
-    const closeGallery = () => {
+    const closeGallery = useCallback(() => {
         setGalleryOpen(false);
         document.body.style.overflow = 'auto';
-    };
+    }, []);
 
     const projectsData = [
         { 
@@ -478,12 +609,19 @@ const Projects = () => {
                     >
                         {/* صورة المشروع */}
                         {project.image && (
-                            <ProjectImage>
-                                <img src={project.image} alt={project.title} />
+                            <ProjectImage onClick={() => project.gallery.length > 0 && openGallery(project.gallery, project.title)}>
+                                <img src={project.image} alt={project.title} loading="lazy" />
                                 {project.gallery.length > 0 && (
-                                    <GalleryBadge onClick={() => openGallery(project.gallery, project.title)}>
-                                        <FaImages /> {project.gallery.length} صورة
-                                    </GalleryBadge>
+                                    <>
+                                        <GalleryBadge>
+                                            <FaImages /> {project.gallery.length}
+                                        </GalleryBadge>
+                                        <ImageOverlay>
+                                            <ViewGalleryBtn>
+                                                <FaImages /> عرض جميع الصور
+                                            </ViewGalleryBtn>
+                                        </ImageOverlay>
+                                    </>
                                 )}
                             </ProjectImage>
                         )}
