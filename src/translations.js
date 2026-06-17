@@ -35,7 +35,7 @@ export const translations = {
         project_code: "الكود المصدري",
         // Real Projects
         project_isbul_title: "İşBul — منصة البحث عن وظائف",
-        project_isbul_desc: "منصة توظيف متكاملة تربط بين أصحاب العمل والباحثين عن فرص عمل في تركيا، مع نظام تصفية ذكي وإدارة كاملة للإعلانات الوظيفية والسير الذاتية.",
+        project_isbul_desc: "منصة توظيف متكاملة وقوية تربط بين أصحاب العمل والباحثين عن فرص عمل، مبنية بأكثر من 60 API مع نظام تصفية ذكي وإدارة كاملة للإعلانات الوظيفية والسير الذاتية.",
         project_velora_title: "Velora Clinic — نظام إدارة العيادة",
         project_velora_desc: "واجهة أمامية احترافية لنظام إدارة عيادة طبية، تتضمن حجز المواعيد، إدارة ملفات المرضى، ولوحة تحكم شاملة للأطباء والإداريين.",
         project_myshop_title: "My Shop — متجر إلكتروني",
@@ -94,7 +94,7 @@ export const translations = {
         project_code: "Source Code",
         // Real Projects
         project_isbul_title: "İşBul — Job Search Platform",
-        project_isbul_desc: "A comprehensive recruitment platform connecting employers and job seekers in Turkey, featuring smart filtering, job listing management, and resume handling.",
+        project_isbul_desc: "A powerful full-featured recruitment platform connecting employers and job seekers, built with 60+ APIs, smart filtering, job listing management, and resume handling.",
         project_velora_title: "Velora Clinic — Clinic Management",
         project_velora_desc: "A professional frontend for a medical clinic management system, including appointment booking, patient records, and a comprehensive dashboard for doctors and admins.",
         project_myshop_title: "My Shop — E-Commerce Store",
