@@ -130,7 +130,6 @@ Error generating stack: `+l.message+`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(2px);
 
     &:hover {
         color: var(--color-accent);
@@ -148,7 +147,6 @@ Error generating stack: `+l.message+`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(2px);
     
     @media (min-width: 769px) {
         display: none; 
@@ -160,6 +158,9 @@ Error generating stack: `+l.message+`
     color: var(--color-text);
     cursor: pointer;
     margin-left: 1rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     
     @media (min-width: 769px) {
         display: none;
