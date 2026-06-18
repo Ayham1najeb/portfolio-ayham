@@ -91,7 +91,6 @@ const ToggleButton = styled(motion.button)`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(2px);
 
     &:hover {
         color: var(--color-accent);
@@ -114,7 +113,6 @@ const MobileToggle = styled(ToggleButton)`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(2px);
     
     @media (min-width: 769px) {
         display: none; 
@@ -128,6 +126,9 @@ const MenuIcon = styled(motion.button)`
     color: var(--color-text);
     cursor: pointer;
     margin-left: 1rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     
     @media (min-width: 769px) {
         display: none;
