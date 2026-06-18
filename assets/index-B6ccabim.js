@@ -290,8 +290,13 @@ Error generating stack: `+l.message+`
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s;
+    text-align: center;
     &:hover {
         background-color: #3730A3;
+    }
+    @media (max-width: 768px) {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 `,tS=X(st.a)`
     border: 2px solid var(--color-accent);
@@ -300,9 +305,14 @@ Error generating stack: `+l.message+`
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s;
+    text-align: center;
     &:hover {
         background-color: var(--color-accent);
         color: var(--color-background); 
+    }
+    @media (max-width: 768px) {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 `,eS=X(st.div)`
     display: flex;
@@ -1040,7 +1050,7 @@ Error generating stack: `+l.message+`
     text-align: center;
     font-weight: 600;
     color: ${n=>n.$success?"#34D399":"#F87171"}; 
-`,ox=()=>{const{t:n}=ki(),[a,s]=q.useState({name:"",email:"",message:""}),[r,c]=q.useState(""),[h,f]=q.useState(!1),g=p=>{s({...a,[p.target.name]:p.target.value})},m=p=>{p.preventDefault(),c("جاري الإرسال..."),f(!1),JS.send("service_uszqsto","template_svh9u6f",a,"Plji6Sr9AJJ6-4tUx").then(()=>{c("تم إرسال رسالتك بنجاح! سأرد عليك في أقرب وقت."),f(!0),s({name:"",email:"",message:""})},()=>{c("حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً."),f(!1)})};return E.jsxs($S,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,amount:.2},children:[E.jsx(WS,{children:n("contact_title")}),E.jsx(IS,{}),E.jsxs(tx,{children:[E.jsxs(ex,{initial:{x:50,opacity:0},whileInView:{x:0,opacity:1},transition:{duration:.6},viewport:{once:!0},children:[E.jsxs(x2,{children:[E.jsx(B9,{}),E.jsxs("div",{children:[E.jsx("p",{style:{color:"var(--color-text)",fontWeight:"bold"},children:n("contact_email")}),E.jsx("p",{style:{color:"#6B7280",fontSize:"1rem",direction:"ltr",textAlign:"start"},children:"ayhamoy2@gmail.com"})]})]}),E.jsxs(x2,{children:[E.jsx(L9,{}),E.jsxs("div",{children:[E.jsx("p",{style:{color:"var(--color-text)",fontWeight:"bold"},children:n("contact_phone")}),E.jsx("p",{style:{color:"#6B7280",fontSize:"1rem",direction:"ltr",textAlign:"start"},children:"05519547382"})]})]}),E.jsxs(nx,{children:[E.jsx(ef,{href:"https://www.linkedin.com/in/ayham-najeb-6a362b345",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(wy,{})})}),E.jsx(ef,{href:"https://github.com/Ayham1najeb",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(xh,{})})}),E.jsx(ef,{href:"https://www.facebook.com/share/1H8h1SdFGJ/",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(Dy,{})})})]})]}),E.jsxs(ix,{onSubmit:m,initial:{x:-50,opacity:0},whileInView:{x:0,opacity:1},transition:{duration:.6},viewport:{once:!0},children:[E.jsxs(ax,{children:[E.jsx(nf,{children:E.jsx(T2,{type:"text",id:"name",name:"name",placeholder:n("contact_form_name"),value:a.name,onChange:g,required:!0})}),E.jsx(nf,{children:E.jsx(T2,{type:"email",id:"email",name:"email",placeholder:n("contact_form_email"),value:a.email,onChange:g,required:!0})})]}),E.jsx(nf,{children:E.jsx(lx,{id:"message",name:"message",placeholder:n("contact_form_message"),value:a.message,onChange:g,required:!0,rows:"6"})}),E.jsx(sx,{type:"submit",children:n("contact_btn_send")}),r&&E.jsx(rx,{$success:h,children:r})]})]})]})},ux=X.footer`
+`,ox=()=>{const{t:n}=ki(),[a,s]=q.useState({name:"",email:"",message:""}),[r,c]=q.useState(""),[h,f]=q.useState(!1),g=p=>{s({...a,[p.target.name]:p.target.value})},m=p=>{p.preventDefault(),c("جاري الإرسال..."),f(!1),JS.send("service_uszqsto","template_svh9u6f",a,"Plji6Sr9AJJ6-4tUx").then(()=>{c("تم إرسال رسالتك بنجاح! سأرد عليك في أقرب وقت."),f(!0),s({name:"",email:"",message:""})},()=>{c("حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً."),f(!1)})};return E.jsxs($S,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,amount:.2},children:[E.jsx(WS,{children:n("contact_title")}),E.jsx(IS,{}),E.jsxs(tx,{children:[E.jsxs(ex,{initial:{x:50,opacity:0},whileInView:{x:0,opacity:1},transition:{duration:.6},viewport:{once:!0},children:[E.jsxs(x2,{children:[E.jsx(B9,{}),E.jsxs("div",{children:[E.jsx("p",{style:{color:"var(--color-text)",fontWeight:"bold"},children:n("contact_email")}),E.jsx("p",{style:{color:"#6B7280",fontSize:"1rem",direction:"ltr",textAlign:"start"},children:"najebayham@gmail.com"})]})]}),E.jsxs(x2,{children:[E.jsx(L9,{}),E.jsxs("div",{children:[E.jsx("p",{style:{color:"var(--color-text)",fontWeight:"bold"},children:n("contact_phone")}),E.jsx("p",{style:{color:"#6B7280",fontSize:"1rem",direction:"ltr",textAlign:"start"},children:"05519547382"})]})]}),E.jsxs(nx,{children:[E.jsx(ef,{href:"https://www.linkedin.com/in/ayham-najeb-6a362b345",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(wy,{})})}),E.jsx(ef,{href:"https://github.com/Ayham1najeb",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(xh,{})})}),E.jsx(ef,{href:"https://www.facebook.com/share/1H8h1SdFGJ/",target:"_blank",rel:"noopener noreferrer",as:st.a,whileHover:{scale:1.1},children:E.jsx(tf,{children:E.jsx(Dy,{})})})]})]}),E.jsxs(ix,{onSubmit:m,initial:{x:-50,opacity:0},whileInView:{x:0,opacity:1},transition:{duration:.6},viewport:{once:!0},children:[E.jsxs(ax,{children:[E.jsx(nf,{children:E.jsx(T2,{type:"text",id:"name",name:"name",placeholder:n("contact_form_name"),value:a.name,onChange:g,required:!0})}),E.jsx(nf,{children:E.jsx(T2,{type:"email",id:"email",name:"email",placeholder:n("contact_form_email"),value:a.email,onChange:g,required:!0})})]}),E.jsx(nf,{children:E.jsx(lx,{id:"message",name:"message",placeholder:n("contact_form_message"),value:a.message,onChange:g,required:!0,rows:"6"})}),E.jsx(sx,{type:"submit",children:n("contact_btn_send")}),r&&E.jsx(rx,{$success:h,children:r})]})]})]})},ux=X.footer`
     background-color: var(--color-card-bg); 
     padding: 1.5rem 0;
     margin-top: 3rem;
