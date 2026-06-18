@@ -294,7 +294,7 @@ const Hero = () => {
                 animate="visible"
             >
                 {/* 🛑 السطر الذي يجب تعديله يدوياً لوضع صورتك الجديدة */}
-                <ProfileImage src="/portfolio-ayham/5.jpeg" alt="Profile Picture" />
+                <ProfileImage src={`${import.meta.env.BASE_URL}5.jpeg`} alt="Profile Picture" />
             </ImageContainer>
 
         </HeroContainer>
