@@ -570,20 +570,20 @@ const Projects = () => {
             gallery: Array.from({ length: 16 }, (_, i) => `${import.meta.env.BASE_URL}projects/velora/${i + 1}.png`)
         },
         { 
-            title: t('project_isbul_title'), 
-            description: t('project_isbul_desc'), 
-            tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
-            link: "#", 
-            code: "https://github.com/Ayham1najeb/IsBul-Job-Platform",
-            image: null,
-            gallery: []
-        },
-        { 
             title: t('project_pharmacy_title'), 
             description: t('project_pharmacy_desc'), 
             tags: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/pharmacy",
+            image: `${import.meta.env.BASE_URL}projects/pharmacy/1.png`,
+            gallery: Array.from({ length: 5 }, (_, i) => `${import.meta.env.BASE_URL}projects/pharmacy/${i + 1}.png`)
+        },
+        { 
+            title: t('project_isbul_title'), 
+            description: t('project_isbul_desc'), 
+            tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/IsBul-Job-Platform",
             image: null,
             gallery: []
         }
