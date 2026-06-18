@@ -99,15 +99,15 @@ const sectionVariants = {
         opacity: 1, 
         y: 0, 
         transition: { 
-            duration: 0.6,
-            staggerChildren: 0.2
+            duration: 0.4,
+            staggerChildren: 0.1
         } 
     },
 };
 
 const itemVariants = {
     hidden: { opacity: 0, x: 0 }, 
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
 
 const About = () => {

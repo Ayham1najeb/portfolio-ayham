@@ -176,13 +176,13 @@ const ProfileImage = styled.img`
 
 // Framer Motion Variants
 const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 const imageVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 0.8 } },
+    visible: { opacity: 1, scale: 1, transition: { delay: 0.2, duration: 0.5 } },
 };
 
 

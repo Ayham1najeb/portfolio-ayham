@@ -277,7 +277,7 @@ const Contact = () => {
                 <InfoSidebar 
                     initial={{ x: 50, opacity: 0 }} 
                     whileInView={{ x: 0, opacity: 1 }} 
-                    transition={{ duration: 0.6 }} 
+                    transition={{ duration: 0.4 }} 
                     viewport={{ once: true }}
                 >
                     {/* Email Card */}
