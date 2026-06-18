@@ -584,8 +584,8 @@ const Projects = () => {
             tags: ["Laravel", "MySQL", "Bootstrap", "REST API"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/IsBul-Job-Platform",
-            image: null,
-            gallery: []
+            image: `${import.meta.env.BASE_URL}projects/isbul/1.png`,
+            gallery: Array.from({ length: 20 }, (_, i) => `${import.meta.env.BASE_URL}projects/isbul/${i + 1}.png`)
         }
     ];
 
