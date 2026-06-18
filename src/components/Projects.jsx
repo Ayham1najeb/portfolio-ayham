@@ -558,7 +558,7 @@ const Projects = () => {
             link: "#", 
             code: "https://github.com/Ayham1najeb/my-shop",
             image: `${import.meta.env.BASE_URL}projects/myshop/cover.jpg?v=2`,
-            gallery: Array.from({ length: 19 }, (_, i) => `${import.meta.env.BASE_URL}projects/myshop/${i + 1}.jpg`)
+            gallery: Array.from({ length: 21 }, (_, i) => `${import.meta.env.BASE_URL}projects/myshop/${i + 1}.png`)
         },
         { 
             title: t('project_velora_title'), 
