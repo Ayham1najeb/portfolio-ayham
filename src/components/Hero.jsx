@@ -165,7 +165,6 @@ const ProfileImage = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
     /* 🛑 تحسين ألوان الصورة برمجياً لتبدو احترافية */
     filter: contrast(1.1) saturate(1.15) brightness(1.05);
     transition: filter 0.3s;
@@ -294,7 +293,7 @@ const Hero = () => {
                 animate="visible"
             >
                 {/* 🛑 السطر الذي يجب تعديله يدوياً لوضع صورتك الجديدة */}
-                <ProfileImage src={`${import.meta.env.BASE_URL}5.jpeg`} alt="Profile Picture" />
+                <ProfileImage src={`${import.meta.env.BASE_URL}ayham-profile1.jpeg`} alt="Profile Picture" />
             </ImageContainer>
 
         </HeroContainer>
