@@ -129,7 +129,7 @@ const Skills = () => {
             <Title
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.1 }}
             >
                 {t('skills_title')}
             </Title>
@@ -137,8 +137,8 @@ const Skills = () => {
             <SkillsGrid
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ staggerChildren: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ staggerChildren: 0.05 }}
             >
                 {skillsData.map((skill, index) => {
                     const Icon = skill.icon;
