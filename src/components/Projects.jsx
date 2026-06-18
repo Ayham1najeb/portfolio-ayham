@@ -575,7 +575,7 @@ const Projects = () => {
             tags: ["Laravel", "PHP", "MySQL", "Bootstrap"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/pharmacy",
-            image: `${import.meta.env.BASE_URL}projects/pharmacy/1.png`,
+            image: `${import.meta.env.BASE_URL}projects/pharmacy/cover.png`,
             gallery: Array.from({ length: 5 }, (_, i) => `${import.meta.env.BASE_URL}projects/pharmacy/${i + 1}.png`)
         },
         { 
