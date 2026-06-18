@@ -83,8 +83,13 @@ const PrimaryButton = styled(motion.a)`
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s;
+    text-align: center;
     &:hover {
         background-color: #3730A3;
+    }
+    @media (max-width: 768px) {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 `;
 
@@ -95,9 +100,14 @@ const SecondaryButton = styled(motion.a)`
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s;
+    text-align: center;
     &:hover {
         background-color: var(--color-accent);
         color: var(--color-background); 
+    }
+    @media (max-width: 768px) {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 `;
 

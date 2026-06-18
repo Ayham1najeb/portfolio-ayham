@@ -285,7 +285,7 @@ const Contact = () => {
                         <FaEnvelope /> 
                         <div> 
                             <p style={{ color: 'var(--color-text)', fontWeight: 'bold' }}>{t('contact_email')}</p>
-                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'start' }}>ayhamoy2@gmail.com</p>
+                            <p style={{ color: '#6B7280', fontSize: '1rem', direction: 'ltr', textAlign: 'start' }}>najebayham@gmail.com</p>
                         </div>
                     </InfoCard>
 
