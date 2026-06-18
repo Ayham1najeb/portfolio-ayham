@@ -389,13 +389,20 @@ const Tag = styled.span`
 const LinkGroup = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 1.5rem; 
     border-top: 1px solid var(--color-border);
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
 `;
 
 const LinkButton = styled(motion.a)`
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     color: var(--color-accent); 
     font-weight: 600;
@@ -403,13 +410,16 @@ const LinkButton = styled(motion.a)`
     font-size: 1.1rem; 
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
 
     &:hover {
         text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        gap: 0.3rem;
+        white-space: nowrap;
     }
 `;
 
