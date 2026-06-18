@@ -192,7 +192,7 @@ const Hero = () => {
 
     useEffect(() => {
         const typedOptions = {
-            strings: [t('hero_name'), t('hero_role_1'), t('hero_role_2'), t('hero_role_3')],
+            strings: [t('hero_name'), t('hero_role_1'), t('hero_role_2')],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 1500,
