@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { FaExternalLinkAlt, FaGithub, FaImages, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext'; 
-
+import Tilt from 'react-parallax-tilt';
 // ============== Gallery Modal Styles ==============
 const ModalOverlay = styled(motion.div)`
     position: fixed;
@@ -603,14 +603,26 @@ const Projects = () => {
 
             <ProjectsGrid>
                 {projectsData.map((project, index) => (
-                    <ProjectCard
+                    <Tilt 
                         key={index}
-                        variants={cardVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        transition={{ delay: index * 0.1 }}
+                        tiltMaxAngleX={10} 
+                        tiltMaxAngleY={10} 
+                        perspective={1000} 
+                        scale={1.02} 
+                        transitionSpeed={1500}
+                        glareEnable={true}
+                        glareMaxOpacity={0.1}
+                        glareColor="var(--color-accent)"
+                        glarePosition="all"
+                        glareBorderRadius="1rem"
                     >
+                        <ProjectCard
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ delay: index * 0.1 }}
+                        >
                         {/* صورة المشروع */}
                         {project.image && (
                             <ProjectImage onClick={() => project.gallery.length > 0 && openGallery(project.gallery, project.title)}>
@@ -665,9 +677,10 @@ const Projects = () => {
                                         <FaImages /> <span>{t('project_gallery')}</span> 
                                     </LinkButton>
                                 ) : null}
-                            </LinkGroup>
-                        </CardContent>
-                    </ProjectCard>
+                                </LinkGroup>
+                            </CardContent>
+                        </ProjectCard>
+                    </Tilt>
                 ))}
             </ProjectsGrid>
 
