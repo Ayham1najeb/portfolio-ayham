@@ -221,6 +221,7 @@ const ProjectsGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); 
     gap: 3rem;
     text-align: start;
+    align-items: stretch;
 
     @media (max-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -238,6 +239,7 @@ const ProjectCard = styled(motion.div)`
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     &:hover {
         box-shadow: 0 0 35px rgba(79, 70, 229, 0.4);
