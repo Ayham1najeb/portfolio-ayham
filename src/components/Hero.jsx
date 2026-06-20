@@ -5,64 +5,8 @@ import { FaGithub, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import Typed from 'typed.js'; 
 import { useLanguage } from '../context/LanguageContext'; 
 
-// Styled Components
-const HeroWrapper = styled.div`
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const BackgroundElements = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-`;
-
-const Blob = styled(motion.div)`
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
-    z-index: 0;
-`;
-
-const Blob1 = styled(Blob)`
-    width: 400px;
-    height: 400px;
-    background: rgba(79, 70, 229, 0.4); 
-    top: -10%;
-    left: -10%;
-`;
-
-const Blob2 = styled(Blob)`
-    width: 500px;
-    height: 500px;
-    background: rgba(236, 72, 153, 0.3); 
-    bottom: -20%;
-    right: -10%;
-`;
-
-const Blob3 = styled(Blob)`
-    width: 300px;
-    height: 300px;
-    background: rgba(56, 189, 248, 0.3); 
-    top: 40%;
-    left: 40%;
-`;
-
 const HeroContainer = styled.div`
-    position: relative;
-    z-index: 1;
     max-width: 1200px;
-    width: 100%;
     margin: 0 auto;
     padding: 2rem;
     display: flex; 
@@ -262,37 +206,9 @@ const Hero = () => {
     }, [language, t]); 
 
     return (
-        <HeroWrapper>
-            <BackgroundElements>
-                <Blob1 
-                    animate={{ 
-                        x: [0, 50, -30, 0], 
-                        y: [0, -50, 20, 0],
-                        scale: [1, 1.1, 0.9, 1]
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                />
-                <Blob2 
-                    animate={{ 
-                        x: [0, -60, 40, 0], 
-                        y: [0, 40, -30, 0],
-                        scale: [1, 1.2, 0.8, 1]
-                    }}
-                    transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                />
-                <Blob3 
-                    animate={{ 
-                        x: [0, 40, -50, 0], 
-                        y: [0, -40, 50, 0],
-                        scale: [1, 0.9, 1.1, 1]
-                    }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                />
-            </BackgroundElements>
-
-            <HeroContainer>
-                
-                {/* 1. النصوص والأزرار (على اليسار/اليمين حسب اللغة) */}
+        <HeroContainer>
+            
+            {/* 1. النصوص والأزرار (على اليسار/اليمين حسب اللغة) */}
             <TextContent
                 initial="hidden"
                 animate="visible"
@@ -381,7 +297,6 @@ const Hero = () => {
             </ImageContainer>
 
         </HeroContainer>
-        </HeroWrapper>
     );
 };
 
