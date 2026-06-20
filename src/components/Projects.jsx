@@ -218,7 +218,7 @@ const Subtitle = styled.p`
 
 const ProjectsGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); 
     gap: 3rem;
     text-align: start;
 
