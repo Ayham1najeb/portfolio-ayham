@@ -19,7 +19,7 @@ export const translations = {
         // About
         about_title: "من أنا",
         about_greeting: "أهلاً بك! أنا أيهم نجيب.",
-        about_p1: "مهندس برمجيات شغوف ومطور ويب شامل (Full Stack Developer)، خريج جامعات تركيا لعام 2022-2026.",
+        about_p1: "مهندس برمجيات شغوف ومطور ويب شامل (Full Stack Developer)، خريج جامعة قونيا التقنية (Konya Teknik Üniversitesi) لعام 2022-2026.",
         about_p2: "أمتلك خبرة عملية في بناء تطبيقات ويب متطورة وموثوقة باستخدام أحدث التقنيات مثل React في الواجهات الأمامية، و Laravel في الواجهات الخلفية.",
         about_p3: "عملت على مشاريع متنوعة تتطلب حلولاً برمجية معقدة وتصاميم عصرية، وأنا دائماً في سعي مستمر لتعلم كل ما هو جديد في عالم التقنية لتطوير مهاراتي وتقديم أفضل تجربة للمستخدم.",
         about_btn_view_cv: "عرض السيرة الذاتية",
@@ -80,7 +80,7 @@ export const translations = {
         // About
         about_title: "About Me",
         about_greeting: "Hello! I'm Ayham Najib.",
-        about_p1: "A passionate Software Engineer and Full Stack Web Developer, graduated from universities in Turkey (2022-2026).",
+        about_p1: "A passionate Software Engineer and Full Stack Web Developer, graduated from Konya Technical University (2022-2026).",
         about_p2: "I have hands-on experience building advanced and reliable web applications using modern technologies like React for the frontend and Laravel for the backend.",
         about_p3: "I've worked on various projects that required complex software solutions and modern designs, and I'm always striving to learn the latest technologies to enhance my skills and deliver the best user experience.",
         about_btn_view_cv: "View CV",
@@ -141,7 +141,7 @@ export const translations = {
         // About
         about_title: "Hakkımda",
         about_greeting: "Merhaba! Ben Ayham Najib.",
-        about_p1: "Tutkulu bir Yazılım Mühendisi ve Full Stack Web Geliştiricisiyim, Türkiye'deki üniversitelerden mezun oldum (2022-2026).",
+        about_p1: "Tutkulu bir Yazılım Mühendisi ve Full Stack Web Geliştiricisiyim, Konya Teknik Üniversitesi'nden mezun oldum (2022-2026).",
         about_p2: "Önyüzde React ve arkayüzde Laravel gibi modern teknolojileri kullanarak gelişmiş ve güvenilir web uygulamaları geliştirme konusunda pratik deneyime sahibim.",
         about_p3: "Karmaşık yazılım çözümleri ve modern tasarımlar gerektiren çeşitli projelerde çalıştım ve yeteneklerimi geliştirmek ve en iyi kullanıcı deneyimini sunmak için sürekli olarak teknoloji dünyasındaki en son yenilikleri öğrenmeye çalışıyorum.",
         about_btn_view_cv: "Özgeçmişi Gör",
