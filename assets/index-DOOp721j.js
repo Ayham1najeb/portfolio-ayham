@@ -696,9 +696,9 @@ Error generating stack: `+l.message+`
     text-align: start;
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1.5rem;
     }
 `,uv=Z(at.div)`
     background-color: var(--color-card-bg); 
@@ -734,7 +734,7 @@ Error generating stack: `+l.message+`
     }
 
     @media (max-width: 768px) {
-        height: 120px;
+        height: 180px;
     }
 `,QS=Z.div`
     position: absolute;
@@ -786,13 +786,6 @@ Error generating stack: `+l.message+`
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,255,255,0.1);
     z-index: 2;
-    
-    @media (max-width: 768px) {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.65rem;
-        top: 5px;
-        right: 5px;
-    }
 `;const PS=Z.div`
     padding: 1.5rem;
     flex-grow: 1;
@@ -801,7 +794,7 @@ Error generating stack: `+l.message+`
     justify-content: space-between;
 
     @media (max-width: 768px) {
-        padding: 0.8rem;
+        padding: 1rem;
     }
 `,FS=Z.h3`
     font-size: 1.7rem; 
@@ -810,8 +803,7 @@ Error generating stack: `+l.message+`
     margin-bottom: 0.8rem;
 
     @media (max-width: 768px) {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
     }
 `,JS=Z.p`
     color: var(--color-text);
@@ -825,21 +817,13 @@ Error generating stack: `+l.message+`
     overflow: hidden;
 
     @media (max-width: 768px) {
-        font-size: 0.75rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.4;
-        -webkit-line-clamp: 3;
+        font-size: 0.95rem;
     }
 `,$S=Z.div`
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem; 
     margin-bottom: 1.5rem; 
-
-    @media (max-width: 768px) {
-        gap: 0.3rem;
-        margin-bottom: 1rem;
-    }
 `,WS=Z.span`
     display: inline-block;
     font-size: 0.9rem; 
@@ -850,8 +834,8 @@ Error generating stack: `+l.message+`
     border-radius: 4px;
 
     @media (max-width: 768px) {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
     }
 `,IS=Z.div`
     display: flex;
@@ -861,10 +845,8 @@ Error generating stack: `+l.message+`
     border-top: 1px solid var(--color-border);
 
     @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
         gap: 0.5rem;
-        padding-top: 0.8rem;
     }
 `,Zl=Z(at.a)`
     display: inline-flex;
@@ -884,8 +866,8 @@ Error generating stack: `+l.message+`
     }
 
     @media (max-width: 768px) {
-        font-size: 0.75rem;
-        gap: 0.25rem;
+        font-size: 0.85rem;
+        gap: 0.3rem;
         white-space: nowrap;
     }
 `,tT={hidden:{opacity:0,y:50},visible:{opacity:1,y:0,transition:{duration:.5}}},eT=({images:n,isOpen:a,onClose:s,projectTitle:r})=>{const[u,h]=Y.useState(0),f=Y.useCallback(p=>{p&&p.stopPropagation(),h(g=>(g+1)%n.length)},[n.length]),m=Y.useCallback(p=>{p&&p.stopPropagation(),h(g=>(g-1+n.length)%n.length)},[n.length]);return we.useEffect(()=>{if(!a)return;const p=g=>{g.key==="ArrowRight"&&f(),g.key==="ArrowLeft"&&m(),g.key==="Escape"&&s()};return window.addEventListener("keydown",p),()=>window.removeEventListener("keydown",p)},[a,f,m,s]),we.useEffect(()=>{a&&h(0)},[a]),a?E.jsx(Of,{children:E.jsxs(RS,{initial:{opacity:0},animate:{opacity:1},exit:{opacity:0},onClick:s,children:[E.jsxs(VS,{children:[E.jsx(LS,{children:r}),E.jsx(HS,{onClick:s,children:E.jsx(J9,{})})]}),E.jsxs(BS,{onClick:p=>p.stopPropagation(),children:[E.jsx(Qg,{className:"prev",onClick:m,children:E.jsx(U9,{})}),E.jsx(Of,{mode:"wait",children:E.jsx(NS,{src:n[u],alt:`${r} - ${u+1}`,initial:{opacity:0,x:40},animate:{opacity:1,x:0},exit:{opacity:0,x:-40},transition:{duration:.25},draggable:"false",onContextMenu:p=>p.preventDefault()},u)}),E.jsx(Qg,{className:"next",onClick:f,children:E.jsx(k9,{})})]}),E.jsxs(US,{children:[u+1," / ",n.length]}),E.jsx(kS,{onClick:p=>p.stopPropagation(),children:n.map((p,g)=>E.jsx(YS,{$active:g===u,onClick:()=>h(g),children:E.jsx("img",{src:p,alt:`thumb-${g+1}`,draggable:"false",onContextMenu:y=>y.preventDefault()})},g))})]})}):null},nT=()=>{const{t:n}=qi(),[a,s]=Y.useState(!1),[r,u]=Y.useState([]),[h,f]=Y.useState(""),m=(y,b)=>{u(y),f(b),s(!0),document.body.style.overflow="hidden"},p=Y.useCallback(()=>{s(!1),document.body.style.overflow="auto"},[]),g=[{title:n("project_qrmenu_title"),description:n("project_qrmenu_desc"),tags:["Laravel","React","Vite","REST API","MySQL","Tailwind CSS"],link:"#",code:"https://github.com/Ayham1najeb/qr-menu-system",image:"/portfolio-ayham/projects/qrmenu/3.png",gallery:Array.from({length:17},(y,b)=>`/portfolio-ayham/projects/qrmenu/${b+1}.${b+1===5?"jpg":"png"}`)},{title:n("project_smartfile_title"),description:n("project_smartfile_desc"),tags:["React","Vite","MUI","Cloudflare"],link:"https://smartfilehub.com/",code:"#",image:"/portfolio-ayham/projects/smartfilehub/1.png",gallery:Array.from({length:17},(y,b)=>`/portfolio-ayham/projects/smartfilehub/${b+1}.png`)},{title:n("project_myshop_title"),description:n("project_myshop_desc"),tags:["Laravel","Livewire","Tailwind CSS","Stripe API","MySQL"],link:"#",code:"https://github.com/Ayham1najeb/my-shop",image:"/portfolio-ayham/projects/myshop/cover.png?v=3",gallery:Array.from({length:21},(y,b)=>`/portfolio-ayham/projects/myshop/${b+1}.png`)},{title:n("project_velora_title"),description:n("project_velora_desc"),tags:["React","Styled Components","REST API"],link:"#",code:"https://github.com/Ayham1najeb/velora-clinic-frontend",image:"/portfolio-ayham/projects/velora/5.png",gallery:Array.from({length:16},(y,b)=>`/portfolio-ayham/projects/velora/${b+1}.png`)},{title:n("project_pharmacy_title"),description:n("project_pharmacy_desc"),tags:["Laravel","PHP","MySQL","Bootstrap"],link:"#",code:"https://github.com/Ayham1najeb/pharmacy",image:"/portfolio-ayham/projects/pharmacy/cover.png",gallery:Array.from({length:5},(y,b)=>`/portfolio-ayham/projects/pharmacy/${b+1}.png`)},{title:n("project_isbul_title"),description:n("project_isbul_desc"),tags:["Laravel","MySQL","Bootstrap","REST API"],link:"#",code:"https://github.com/Ayham1najeb/IsBul-Job-Platform",image:"/portfolio-ayham/projects/isbul/cover.png",gallery:Array.from({length:20},(y,b)=>`/portfolio-ayham/projects/isbul/${b+1}.png`)}];return E.jsxs(qS,{children:[E.jsx(GS,{initial:{opacity:0,y:-50},whileInView:{opacity:1,y:0},viewport:{once:!0,amount:.1},children:n("projects_title")}),E.jsx(XS,{}),E.jsx(ZS,{children:g.map((y,b)=>E.jsx(ov,{tiltMaxAngleX:10,tiltMaxAngleY:10,perspective:1e3,scale:1.02,transitionSpeed:1500,glareEnable:!0,glareMaxOpacity:.1,glareColor:"var(--color-accent)",glarePosition:"all",glareBorderRadius:"1rem",children:E.jsxs(uv,{variants:tT,initial:"hidden",whileInView:"visible",viewport:{once:!0,amount:.1},transition:{delay:b*.1},children:[y.image&&E.jsxs(Uh,{onClick:()=>y.gallery.length>0&&m(y.gallery,y.title),children:[E.jsx("img",{src:y.image,alt:y.title,loading:"lazy",draggable:"false",onContextMenu:x=>x.preventDefault()}),y.gallery.length>0&&E.jsx(E.Fragment,{children:E.jsx(QS,{children:E.jsxs(KS,{children:[E.jsx(df,{})," عرض جميع الصور"]})})})]}),E.jsxs(PS,{children:[E.jsxs("div",{children:[E.jsx(FS,{children:y.title}),E.jsx(JS,{children:y.description})]}),E.jsx($S,{children:y.tags.map((x,z)=>E.jsx(WS,{children:x},z))}),E.jsxs(IS,{children:[y.link!=="#"?E.jsxs(Zl,{href:y.link,target:"_blank",rel:"noopener noreferrer",whileHover:{scale:1.05},children:[E.jsx(qg,{})," ",E.jsx("span",{children:n("project_view")})]}):y.gallery.length>0?E.jsxs(Zl,{as:"button",style:{background:"transparent",border:"none",padding:0},onClick:()=>m(y.gallery,y.title),whileHover:{scale:1.05},children:[E.jsx(df,{})," ",E.jsx("span",{children:n("project_gallery")})]}):E.jsxs(Zl,{href:y.code,target:"_blank",rel:"noopener noreferrer",whileHover:{scale:1.05},children:[E.jsx(qg,{})," ",E.jsx("span",{children:n("project_view")})]}),y.code!=="#"?E.jsxs(Zl,{href:y.code,target:"_blank",rel:"noopener noreferrer",whileHover:{scale:1.05},children:[E.jsx(Hh,{})," ",E.jsx("span",{children:n("project_code")})]}):y.gallery.length>0?E.jsxs(Zl,{as:"button",style:{background:"transparent",border:"none",padding:0},onClick:()=>m(y.gallery,y.title),whileHover:{scale:1.05},children:[E.jsx(df,{})," ",E.jsx("span",{children:n("project_gallery")})]}):null]})]})]})},b))}),E.jsx(eT,{images:r,isOpen:a,onClose:p,projectTitle:h})]})},os={_origin:"https://api.emailjs.com"},iT=(n,a="https://api.emailjs.com")=>{os._userID=n,os._origin=a},cv=(n,a,s)=>{if(!n)throw"The user ID is required. Visit https://dashboard.emailjs.com/admin/integration";if(!a)throw"The service ID is required. Visit https://dashboard.emailjs.com/admin";if(!s)throw"The template ID is required. Visit https://dashboard.emailjs.com/admin/templates";return!0};class Kg{constructor(a){this.status=a.status,this.text=a.responseText}}const fv=(n,a,s={})=>new Promise((r,u)=>{const h=new XMLHttpRequest;h.addEventListener("load",({target:f})=>{const m=new Kg(f);m.status===200||m.text==="OK"?r(m):u(m)}),h.addEventListener("error",({target:f})=>{u(new Kg(f))}),h.open("POST",os._origin+n,!0),Object.keys(s).forEach(f=>{h.setRequestHeader(f,s[f])}),h.send(a)}),aT=(n,a,s,r)=>{const u=r||os._userID;return cv(u,n,a),fv("/api/v1.0/email/send",JSON.stringify({lib_version:"3.2.0",user_id:u,service_id:n,template_id:a,template_params:s}),{"Content-type":"application/json"})},lT=n=>{let a;if(typeof n=="string"?a=document.querySelector(n):a=n,!a||a.nodeName!=="FORM")throw"The 3rd parameter is expected to be the HTML form element or the style selector of form";return a},sT=(n,a,s,r)=>{const u=r||os._userID,h=lT(s);cv(u,n,a);const f=new FormData(h);return f.append("lib_version","3.2.0"),f.append("service_id",n),f.append("template_id",a),f.append("user_id",u),fv("/api/v1.0/email/send-form",f)},rT={init:iT,send:aT,sendForm:sT},gf=Z(at.span)`
