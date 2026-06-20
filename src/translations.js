@@ -44,6 +44,8 @@ export const translations = {
         project_smartfile_desc: "منصة سحابية متطورة وآمنة لإدارة ومعالجة المستندات بمقاييس مؤسسية. مبنية بهندسة برمجية قوية توفر أكثر من 130 نقطة نهاية (API) مع أدوات احترافية لتحويل وتنظيم الملفات بسرعة فائقة وحماية متقدمة للبيانات.",
         project_pharmacy_title: "Pharmacy — نظام إدارة الصيدلية",
         project_pharmacy_desc: "نظام متكامل لإدارة الصيدليات يشمل تتبع المخزون، إدارة الأدوية والوصفات الطبية، وتقارير المبيعات بواجهة سهلة الاستخدام.",
+        project_qrmenu_title: "QR Order & Menu System — نظام قائمة الطعام الذكي",
+        project_qrmenu_desc: "منصة رقمية متكاملة لإدارة المطاعم وتجربة الطعام التفاعلية عبر رمز الاستجابة السريعة (QR Code). مبنية بهندسة برمجية متطورة تحتوي على أكثر من 50 نقطة نهاية (API/Routes) لإدارة الطاولات، تتبع الطلبات حياً ومباشراً من المطبخ، لوحة تحكم تفاعلية للمدراء لتعديل المنيو والأسعار وشارات التغذية والوجبات المميزة، مع تصميم واجهات سينمائية فائقة السرعة تدعم الوضع الداكن وتعدد اللغات.",
 
         // Contact
         contact_title: "تواصل معي",
@@ -103,6 +105,8 @@ export const translations = {
         project_smartfile_desc: "An advanced, secure cloud platform for document processing at enterprise scale. Built with a robust architecture and over 130 API endpoints, it provides professional tools for ultra-fast file conversion, organization, and top-tier data protection.",
         project_pharmacy_title: "Pharmacy — Pharmacy Management",
         project_pharmacy_desc: "A comprehensive pharmacy management system featuring inventory tracking, medication and prescription management, and sales reporting with an intuitive user interface.",
+        project_qrmenu_title: "QR Order & Menu System — Smart Restaurant Platform",
+        project_qrmenu_desc: "An integrated digital platform for restaurant management and interactive dining experience via QR code. Built with advanced software architecture containing over 50 endpoints (API/Routes) for table management, live order tracking from the kitchen, an interactive dashboard for managers to edit menus, prices, nutrition badges, and featured meals. Features ultra-fast cinematic UI design supporting dark mode and multiple languages.",
 
         // Contact
         contact_title: "Contact Me",
@@ -162,6 +166,8 @@ export const translations = {
         project_smartfile_desc: "Kurumsal ölçekte belgeleri işlemek için gelişmiş ve güvenli bir bulut platformu. Güçlü bir mimari ve 130'dan fazla API ucu ile oluşturulmuş olup, ultra hızlı dosya dönüştürme, düzenleme ve üst düzey veri koruması için profesyonel araçlar sunar.",
         project_pharmacy_title: "Pharmacy — Eczane Yönetim Sistemi",
         project_pharmacy_desc: "Kullanımı kolay bir arayüz ile envanter takibi, ilaç ve reçete yönetimi ve satış raporlaması içeren kapsamlı bir eczane yönetim sistemi.",
+        project_qrmenu_title: "QR Order & Menu System — Akıllı Restoran Platformu",
+        project_qrmenu_desc: "Restoran yönetimi ve QR kod üzerinden etkileşimli yemek deneyimi için entegre bir dijital platform. Masa yönetimi, mutfaktan canlı sipariş takibi, yöneticilerin menüleri, fiyatları, beslenme rozetlerini ve öne çıkan yemekleri düzenlemesi için etkileşimli bir kontrol paneli için 50'den fazla uç nokta (API/Routes) içeren gelişmiş bir yazılım mimarisi ile oluşturulmuştur. Karanlık modu ve çoklu dili destekleyen ultra hızlı sinematik UI tasarımına sahiptir.",
 
         // Contact
         contact_title: "Bana Ulaş",

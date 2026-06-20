@@ -553,6 +553,15 @@ const Projects = () => {
 
     const projectsData = [
         { 
+            title: t('project_qrmenu_title'), 
+            description: t('project_qrmenu_desc'), 
+            tags: ["Laravel", "React", "Vite", "REST API", "MySQL", "Tailwind CSS"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/qr-menu-system",
+            image: null,
+            gallery: []
+        },
+        { 
             title: t('project_smartfile_title'), 
             description: t('project_smartfile_desc'), 
             tags: ["React", "Vite", "MUI", "Cloudflare"], 
