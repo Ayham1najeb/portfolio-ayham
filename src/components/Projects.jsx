@@ -558,7 +558,7 @@ const Projects = () => {
             tags: ["Laravel", "React", "Vite", "REST API", "MySQL", "Tailwind CSS"], 
             link: "#", 
             code: "https://github.com/Ayham1najeb/qr-menu-system",
-            image: `${import.meta.env.BASE_URL}projects/qrmenu/8.png`,
+            image: `${import.meta.env.BASE_URL}projects/qrmenu/3.png`,
             gallery: Array.from({ length: 17 }, (_, i) => `${import.meta.env.BASE_URL}projects/qrmenu/${i + 1}.${i + 1 === 5 ? 'jpg' : 'png'}`)
         },
         { 
