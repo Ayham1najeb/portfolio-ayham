@@ -223,9 +223,9 @@ const ProjectsGrid = styled.div`
     text-align: start;
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1.5rem;
     }
 `;
 
@@ -265,7 +265,7 @@ const ProjectImage = styled.div`
     }
 
     @media (max-width: 768px) {
-        height: 120px;
+        height: 180px;
     }
 `;
 
@@ -323,13 +323,6 @@ const GalleryBadge = styled.div`
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,255,255,0.1);
     z-index: 2;
-    
-    @media (max-width: 768px) {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.65rem;
-        top: 5px;
-        right: 5px;
-    }
 `;
 
 const CardContent = styled.div`
@@ -340,7 +333,7 @@ const CardContent = styled.div`
     justify-content: space-between;
 
     @media (max-width: 768px) {
-        padding: 0.8rem;
+        padding: 1rem;
     }
 `;
 
@@ -351,8 +344,7 @@ const ProjectTitle = styled.h3`
     margin-bottom: 0.8rem;
 
     @media (max-width: 768px) {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
     }
 `;
 
@@ -368,10 +360,7 @@ const ProjectDescription = styled.p`
     overflow: hidden;
 
     @media (max-width: 768px) {
-        font-size: 0.75rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.4;
-        -webkit-line-clamp: 3;
+        font-size: 0.95rem;
     }
 `;
 
@@ -380,11 +369,6 @@ const TagGroup = styled.div`
     flex-wrap: wrap;
     gap: 0.6rem; 
     margin-bottom: 1.5rem; 
-
-    @media (max-width: 768px) {
-        gap: 0.3rem;
-        margin-bottom: 1rem;
-    }
 `;
 
 const Tag = styled.span`
@@ -397,8 +381,8 @@ const Tag = styled.span`
     border-radius: 4px;
 
     @media (max-width: 768px) {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
     }
 `;
 
@@ -410,10 +394,8 @@ const LinkGroup = styled.div`
     border-top: 1px solid var(--color-border);
 
     @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
         gap: 0.5rem;
-        padding-top: 0.8rem;
     }
 `;
 
@@ -435,8 +417,8 @@ const LinkButton = styled(motion.a)`
     }
 
     @media (max-width: 768px) {
-        font-size: 0.75rem;
-        gap: 0.25rem;
+        font-size: 0.85rem;
+        gap: 0.3rem;
         white-space: nowrap;
     }
 `;
