@@ -26,34 +26,39 @@ const ParticlesBackground = () => {
             events: {
                 onHover: {
                     enable: true,
-                    mode: "bubble", 
+                    mode: "grab", // Connects lines to mouse
                 },
                 resize: true,
             },
             modes: {
-                bubble: {
-                    distance: 200,
-                    duration: 2,
-                    size: 3, 
-                    opacity: 0.8,
+                grab: {
+                    distance: 150,
+                    links: {
+                        opacity: 0.4,
+                        color: "#4F46E5",
+                    },
                 },
             },
         },
         particles: {
             color: {
-                value: "#6366F1", // Indigo color visible in both light and dark mode
+                value: "#4F46E5", // Professional Indigo color
             },
             links: {
-                enable: false, // No links, just stars
+                color: "#4F46E5",
+                distance: 150,
+                enable: true, // Connects the dots with lines!
+                opacity: 0.2,
+                width: 1,
             },
             move: {
                 direction: "none",
                 enable: true,
                 outModes: {
-                    default: "out",
+                    default: "bounce",
                 },
-                random: true,
-                speed: 0.2, // Very calm and slow movement
+                random: false,
+                speed: 1, // Smooth, deliberate movement
                 straight: false,
             },
             number: {
@@ -61,22 +66,16 @@ const ParticlesBackground = () => {
                     enable: true,
                     area: 800,
                 },
-                value: 120, 
+                value: 80, // Perfect balance for a network look
             },
             opacity: {
-                value: { min: 0.1, max: 0.8 },
-                animation: {
-                    enable: true,
-                    speed: 0.5,
-                    minimumValue: 0.1,
-                    sync: false
-                } // Twinkling effect
+                value: 0.5,
             },
             shape: {
                 type: "circle",
             },
             size: {
-                value: { min: 0.5, max: 2 }, // Small stars
+                value: { min: 1, max: 3 },
             },
         },
         detectRetina: true,
