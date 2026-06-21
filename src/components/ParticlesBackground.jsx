@@ -41,7 +41,7 @@ const ParticlesBackground = () => {
         },
         particles: {
             color: {
-                value: "#ffffff",
+                value: "#6366F1", // Indigo color visible in both light and dark mode
             },
             links: {
                 enable: false, // No links, just stars
@@ -84,7 +84,7 @@ const ParticlesBackground = () => {
 
     if (init) {
         return (
-            <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: -10 }}>
+            <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none" }}>
                 <Particles id="tsparticles" options={options} />
             </div>
         );

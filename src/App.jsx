@@ -38,7 +38,7 @@ function App() {
             zIndex: 1000
           }}
         />
-        <div className="min-h-screen">
+        <div className="min-h-screen" style={{ position: 'relative', zIndex: 1 }}>
           <Navbar /> 
           
           <main style={{ paddingTop: '5rem' }}> 
