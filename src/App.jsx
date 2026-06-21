@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ParticlesBackground from './components/ParticlesBackground';
 import { ThemeProvider } from './context/ThemeContext'; 
 import { LanguageProvider } from './context/LanguageContext'; 
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <LanguageProvider>
       <ThemeProvider> 
+        <ParticlesBackground />
         <CustomCursor />
         {/* Scroll Progress Bar */}
         <motion.div
