@@ -58,7 +58,7 @@ const ParticlesBackground = () => {
                     default: "bounce",
                 },
                 random: false,
-                speed: 1, // Smooth, deliberate movement
+                speed: 0.5, // Even slower and calmer
                 straight: false,
             },
             number: {
@@ -75,7 +75,7 @@ const ParticlesBackground = () => {
                 type: "circle",
             },
             size: {
-                value: { min: 1, max: 3 },
+                value: { min: 2, max: 4 }, // Slightly bigger
             },
         },
         detectRetina: true,
