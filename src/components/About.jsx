@@ -137,7 +137,7 @@ const About = () => {
                 <motion.div variants={itemVariants}>
                     <ButtonGroup>
                         <SecondaryCVButton
-                            href="/portfolio-ayham/ayham-cv.pdf" 
+                            href="/portfolio-ayham/Ayham_Cv.pdf?v=2" 
                             target="_blank" /* 💡 للعرض في علامة تبويب جديدة */
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
@@ -146,7 +146,7 @@ const About = () => {
                         </SecondaryCVButton>
 
                         <CVButton
-                            href="/portfolio-ayham/ayham-cv.pdf" 
+                            href="/portfolio-ayham/Ayham_Cv.pdf?v=2" 
                             download
                             whileHover={{ scale: 1.05 }}
                         >
