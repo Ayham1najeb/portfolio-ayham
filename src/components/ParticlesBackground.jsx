@@ -26,32 +26,39 @@ const ParticlesBackground = () => {
             events: {
                 onHover: {
                     enable: true,
-                    mode: "repulse", // Gentle push away from mouse
+                    mode: "grab", // Connects lines to mouse
                 },
                 resize: true,
             },
             modes: {
-                repulse: {
-                    distance: 120,
-                    duration: 0.4,
+                grab: {
+                    distance: 150,
+                    links: {
+                        opacity: 0.4,
+                        color: "#4F46E5",
+                    },
                 },
             },
         },
         particles: {
             color: {
-                value: ["#4F46E5", "#8B5CF6", "#A78BFA"], // Subtle, relaxing mix of indigo and violet
+                value: "#4F46E5", // Professional Indigo color
             },
             links: {
-                enable: false, // No harsh lines
+                color: "#4F46E5",
+                distance: 150,
+                enable: true, // Connects the dots with lines!
+                opacity: 0.2,
+                width: 1,
             },
             move: {
-                direction: "top", // Gentle upward drift
+                direction: "none",
                 enable: true,
                 outModes: {
-                    default: "out",
+                    default: "bounce",
                 },
-                random: true,
-                speed: 0.3, // Extremely slow and relaxing
+                random: false,
+                speed: 0.5, // Slow and calm
                 straight: false,
             },
             number: {
@@ -59,22 +66,16 @@ const ParticlesBackground = () => {
                     enable: true,
                     area: 800,
                 },
-                value: 100, // Not too crowded
+                value: 80, // Perfect balance for a network look
             },
             opacity: {
-                value: { min: 0.1, max: 0.6 },
-                animation: {
-                    enable: true,
-                    speed: 0.5,
-                    minimumValue: 0.1,
-                    sync: false
-                } // Soft twinkling
+                value: 0.5,
             },
             shape: {
                 type: "circle",
             },
             size: {
-                value: { min: 1, max: 2.5 }, // Small, dust-like particles
+                value: { min: 2, max: 4 }, // Slightly bigger
             },
         },
         detectRetina: true,
