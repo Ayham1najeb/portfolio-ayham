@@ -66,7 +66,7 @@ const ParticlesBackground = () => {
                     enable: true,
                     area: 800,
                 },
-                value: 80, // Perfect balance for a network look
+                value: 40, // Reduced to make it cleaner and less crowded
             },
             opacity: {
                 value: 0.5,
