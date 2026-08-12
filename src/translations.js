@@ -46,6 +46,8 @@ export const translations = {
         project_pharmacy_desc: "نظام متكامل لإدارة الصيدليات يشمل تتبع المخزون، إدارة الأدوية والوصفات الطبية، وتقارير المبيعات بواجهة سهلة الاستخدام.",
         project_qrmenu_title: "QR Order & Menu System — نظام قائمة الطعام الذكي",
         project_qrmenu_desc: "منصة رقمية متكاملة لإدارة المطاعم وتجربة الطعام التفاعلية عبر رمز الاستجابة السريعة (QR Code). مبنية بهندسة برمجية متطورة تحتوي على أكثر من 50 نقطة نهاية (API/Routes) لإدارة الطاولات، تتبع الطلبات حياً ومباشراً من المطبخ، لوحة تحكم تفاعلية للمدراء لتعديل المنيو والأسعار وشارات التغذية والوجبات المميزة، مع تصميم واجهات سينمائية فائقة السرعة تدعم الوضع الداكن وتعدد اللغات.",
+        project_medical_crm_title: "Medical CRM — نظام إدارة المراكز الطبية",
+        project_medical_crm_desc: "نظام متطور وشامل لإدارة العيادات والمراكز الطبية. يوفر لوحة تحكم تفاعلية متكاملة لتنظيم المواعيد، إدارة سجلات المرضى (EMR)، متابعة الفواتير والمدفوعات، بالإضافة إلى نظام صلاحيات متقدم للأطباء والموظفين. مبني بهندسة برمجية حديثة تضمن سرعة الأداء وسرية البيانات مع واجهة مستخدم عصرية وسهلة الاستخدام.",
 
         // Contact
         contact_title: "تواصل معي",
@@ -107,6 +109,8 @@ export const translations = {
         project_pharmacy_desc: "A comprehensive pharmacy management system featuring inventory tracking, medication and prescription management, and sales reporting with an intuitive user interface.",
         project_qrmenu_title: "QR Order & Menu System — Smart Restaurant Platform",
         project_qrmenu_desc: "An integrated digital platform for restaurant management and interactive dining experience via QR code. Built with advanced software architecture containing over 50 endpoints (API/Routes) for table management, live order tracking from the kitchen, an interactive dashboard for managers to edit menus, prices, nutrition badges, and featured meals. Features ultra-fast cinematic UI design supporting dark mode and multiple languages.",
+        project_medical_crm_title: "Medical CRM — Healthcare Management System",
+        project_medical_crm_desc: "An advanced and comprehensive healthcare management system for clinics and medical centers. It provides an interactive dashboard for scheduling appointments, managing electronic medical records (EMR), billing, and payments tracking, alongside an advanced role-based access control system for doctors and staff. Built with a modern software architecture that ensures high performance and data security with a sleek, user-friendly interface.",
 
         // Contact
         contact_title: "Contact Me",
@@ -168,6 +172,8 @@ export const translations = {
         project_pharmacy_desc: "Kullanımı kolay bir arayüz ile envanter takibi, ilaç ve reçete yönetimi ve satış raporlaması içeren kapsamlı bir eczane yönetim sistemi.",
         project_qrmenu_title: "QR Order & Menu System — Akıllı Restoran Platformu",
         project_qrmenu_desc: "Restoran yönetimi ve QR kod üzerinden etkileşimli yemek deneyimi için entegre bir dijital platform. Masa yönetimi, mutfaktan canlı sipariş takibi, yöneticilerin menüleri, fiyatları, beslenme rozetlerini ve öne çıkan yemekleri düzenlemesi için etkileşimli bir kontrol paneli için 50'den fazla uç nokta (API/Routes) içeren gelişmiş bir yazılım mimarisi ile oluşturulmuştur. Karanlık modu ve çoklu dili destekleyen ultra hızlı sinematik UI tasarımına sahiptir.",
+        project_medical_crm_title: "Medical CRM — Sağlık Merkezi Yönetim Sistemi",
+        project_medical_crm_desc: "Klinikler ve tıp merkezleri için gelişmiş ve kapsamlı bir sağlık yönetim sistemi. Randevu planlama, elektronik sağlık kayıtları (EMR) yönetimi, faturalandırma ve ödeme takibi için entegre etkileşimli bir kontrol panelinin yanı sıra doktorlar ve personel için gelişmiş bir yetkilendirme sistemi sunar. Yüksek performans ve veri güvenliği sağlayan modern bir yazılım mimarisi ve şık, kullanıcı dostu bir arayüz ile oluşturulmuştur.",
 
         // Contact
         contact_title: "Bana Ulaş",

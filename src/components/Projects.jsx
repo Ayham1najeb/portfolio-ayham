@@ -555,6 +555,15 @@ const Projects = () => {
 
     const projectsData = [
         { 
+            title: t('project_medical_crm_title'), 
+            description: t('project_medical_crm_desc'), 
+            tags: ["React", "Laravel", "Tailwind CSS", "MySQL", "REST API"], 
+            link: "#", 
+            code: "https://github.com/Ayham1najeb/medical-crm",
+            image: `${import.meta.env.BASE_URL}projects/medicalcrm/1.png`,
+            gallery: Array.from({ length: 5 }, (_, i) => `${import.meta.env.BASE_URL}projects/medicalcrm/${i + 1}.png`)
+        },
+        { 
             title: t('project_qrmenu_title'), 
             description: t('project_qrmenu_desc'), 
             tags: ["Laravel", "React", "Vite", "REST API", "MySQL", "Tailwind CSS"], 
