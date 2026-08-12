@@ -561,7 +561,7 @@ const Projects = () => {
             link: "#", 
             code: "https://github.com/Ayham1najeb/medical-crm",
             image: `${import.meta.env.BASE_URL}projects/medicalcrm/1.png`,
-            gallery: Array.from({ length: 10 }, (_, i) => `${import.meta.env.BASE_URL}projects/medicalcrm/${i + 1}.png`)
+            gallery: Array.from({ length: 13 }, (_, i) => `${import.meta.env.BASE_URL}projects/medicalcrm/${i + 1}.png`)
         },
         { 
             title: t('project_qrmenu_title'), 
